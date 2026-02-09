@@ -1,77 +1,71 @@
 <script setup lang="ts">
 const { fetchGalleryItems, strapiUrl } = useStrapi();
 const { data: items } = await useAsyncData("gallery-items", fetchGalleryItems);
+const itemCount = computed(() => items.value?.length ?? 0);
 </script>
 
 <template>
-  <div class="container">
-    <header>
-      <h1>devbar.bar</h1>
-    </header>
+  <div>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Koleksiyon</span>
+        <h1 class="hero-title">Gorunumu sakin, anlatimi guclu galeriler.</h1>
+        <p class="hero-lede">
+          Her proje icin sade bir vitrin: gorsel akisi bozmadan, detaylari
+          on plana cikaran bir sunum.
+        </p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-primary">Galeriyi kesfet</a>
+          <a href="#gallery" class="btn btn-ghost">Tum koleksiyonlar</a>
+          <span class="hero-meta">{{ itemCount }} galeri</span>
+        </div>
+      </div>
 
-    <main>
-      <section class="gallery">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="tile tile-a"></div>
+        <div class="tile tile-b"></div>
+        <div class="tile tile-c"></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Galeriler</h2>
+          <p class="section-subtitle">
+            Secli isler ve referanslar. Her galeri, kendi detay sayfasinda
+            tum gorselleriyle yer alir.
+          </p>
+        </div>
+        <span class="hero-meta">{{ itemCount }} toplam</span>
+      </div>
+
+      <div class="gallery-grid">
         <NuxtLink
-          v-for="item in items"
+          v-for="(item, index) in items"
           :key="item.id"
           :to="`/gallery/${item.id}`"
           class="gallery-card"
+          :style="{ '--i': index }"
         >
-          <img
-            :src="strapiUrl(item.attributes.coverImage.data.attributes.url)"
-            :alt="item.attributes.title"
-            loading="lazy"
-          />
-          <h2>{{ item.attributes.title }}</h2>
+          <div class="gallery-media">
+            <img
+              :src="strapiUrl(item.attributes.coverImage.data.attributes.url)"
+              :alt="item.attributes.title"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="gallery-body">
+            <h3 class="gallery-title">{{ item.attributes.title }}</h3>
+            <span class="gallery-cta">Galeriyi gor &rarr;</span>
+          </div>
         </NuxtLink>
-      </section>
+      </div>
 
-      <p v-if="!items?.length" class="empty">Henuz icerik yok.</p>
-    </main>
+      <div v-if="!items?.length" class="empty-state">
+        Henuz icerik yok. Strapi uzerinden yeni galeri ekleyebilirsiniz.
+      </div>
+    </section>
   </div>
 </template>
-
-<style scoped>
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.gallery-card {
-  text-decoration: none;
-  color: inherit;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.gallery-card:hover {
-  transform: translateY(-4px);
-}
-
-.gallery-card img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.gallery-card h2 {
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.empty {
-  text-align: center;
-  color: #666;
-  padding: 4rem 0;
-}
-</style>

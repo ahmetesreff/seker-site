@@ -17,96 +17,47 @@ useHead({
 </script>
 
 <template>
-  <div v-if="item" class="container">
-    <NuxtLink to="/" class="back">&larr; Geri</NuxtLink>
-
-    <h1>{{ item.attributes.title }}</h1>
-
-    <!-- Cover -->
-    <img
-      :src="strapiUrl(item.attributes.coverImage.data.attributes.url)"
-      :alt="item.attributes.title"
-      class="cover"
-    />
-
-    <!-- Video -->
-    <div v-if="item.attributes.videoUrl" class="video-wrapper">
-      <iframe
-        :src="item.attributes.videoUrl"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
+  <div v-if="item" class="detail">
+    <div class="detail-header">
+      <NuxtLink to="/" class="back-pill">&larr; Geri</NuxtLink>
+      <span class="eyebrow">Galeri</span>
+      <h1 class="detail-title">{{ item.attributes.title }}</h1>
     </div>
 
-    <!-- Gallery images -->
-    <div
-      v-if="item.attributes.images.data?.length"
-      class="images"
-    >
+    <div class="detail-cover">
       <img
-        v-for="img in item.attributes.images.data"
-        :key="img.attributes.url"
-        :src="strapiUrl(img.attributes.url)"
-        :alt="img.attributes.alternativeText || item.attributes.title"
-        loading="lazy"
+        :src="strapiUrl(item.attributes.coverImage.data.attributes.url)"
+        :alt="item.attributes.title"
       />
     </div>
+
+    <section v-if="item.attributes.videoUrl" class="detail-section">
+      <h2>Video</h2>
+      <div class="video-frame">
+        <iframe
+          :src="item.attributes.videoUrl"
+          title="Galeri videosu"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    </section>
+
+    <section
+      v-if="item.attributes.images.data?.length"
+      class="detail-section"
+    >
+      <h2>Gorseller</h2>
+      <div class="detail-grid">
+        <img
+          v-for="img in item.attributes.images.data"
+          :key="img.attributes.url"
+          :src="strapiUrl(img.attributes.url)"
+          :alt="img.attributes.alternativeText || item.attributes.title"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
   </div>
 </template>
-
-<style scoped>
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.back {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: #555;
-  text-decoration: none;
-}
-
-.back:hover {
-  color: #000;
-}
-
-h1 {
-  margin-bottom: 1.5rem;
-}
-
-.cover {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  margin-bottom: 2rem;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-}
-
-.images {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.images img {
-  width: 100%;
-  border-radius: 6px;
-  object-fit: cover;
-}
-</style>

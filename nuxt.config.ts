@@ -13,6 +13,8 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/image"],
 
+  css: ["~/assets/main.css"],
+
   image: {
     providers: {
       strapi: {
@@ -30,6 +32,14 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
       title: "devbar.bar",
       htmlAttrs: { lang: "tr" },
+      link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap",
+        },
+      ],
     },
   },
 
