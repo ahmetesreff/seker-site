@@ -12,7 +12,7 @@ if (!item.value) {
 }
 
 useHead({
-  title: `${item.value.attributes.title} — devbar.bar`,
+  title: `${item.value.attributes.title} - Seker Mermer`,
 });
 </script>
 
