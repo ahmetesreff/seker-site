@@ -8,11 +8,11 @@ const { data: item } = await useAsyncData(
 );
 
 if (!item.value) {
-  throw createError({ statusCode: 404, message: "Icerik bulunamadi" });
+  throw createError({ statusCode: 404, message: "İçerik bulunamadı" });
 }
 
 useHead({
-  title: `${item.value.attributes.title} - Seker Mermer`,
+  title: `${item.value.attributes.title} - Şeker Mermer`,
 });
 </script>
 
@@ -47,7 +47,7 @@ useHead({
       v-if="item.attributes.images.data?.length"
       class="detail-section"
     >
-      <h2>Gorseller</h2>
+      <h2>Görseller</h2>
       <div class="detail-grid">
         <img
           v-for="img in item.attributes.images.data"

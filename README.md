@@ -1,24 +1,24 @@
 # devbar.bar — Site
 
-Nuxt 3 SSG statik site. Strapi CMS'den veri cekerek build sirasinda HTML uretir.
+Nuxt 3 SSG statik site. Strapi CMS'den veri çekerek build sırasında HTML üretir.
 
 ## Gereksinimler
 
 - Node.js 20 LTS
 - npm 9+
 
-## Yerel Gelistirme
+## Yerel Geliştirme
 
 ```bash
 # 1. Repo'yu klonla
 git clone git@github.com:OWNER/site.git
 cd site
 
-# 2. Env dosyasi
+# 2. Env dosyası
 cp .env.example .env
-# STRAPI_URL=http://localhost:1337 (yerel CMS icin)
+# STRAPI_URL=http://localhost:1337 (yerel CMS için)
 
-# 3. Bagimliliklari yukle
+# 3. Bağımlılıkları yükle
 npm install
 
 # 4. Dev server
@@ -28,30 +28,30 @@ npm run dev
 ## Build & Generate
 
 ```bash
-# Statik site uret
+# Statik site üret
 STRAPI_URL=https://admin.devbar.bar npm run generate
 
-# Cikti: .output/public/
+# Çıktı: .output/public/
 ```
 
 ## Deploy
 
 GitHub Actions otomatik deploy yapar:
-- `main` branch'ine push yapildiginda
-- Strapi'de icerik yayinlandiginda (webhook → repository_dispatch)
+- `main` branch'ine push yapıldığında
+- Strapi'de içerik yayınlandığında (webhook → repository_dispatch)
 - Manuel olarak (workflow_dispatch)
 
 ### GitHub Repo Secrets
 
-| Secret | Aciklama |
+| Secret | Açıklama |
 |---|---|
 | `DEPLOY_HOST` | VPS IP adresi |
-| `DEPLOY_USER` | SSH kullanicisi (deploy) |
+| `DEPLOY_USER` | SSH kullanıcısı (deploy) |
 | `DEPLOY_SSH_KEY` | SSH private key |
 | `DEPLOY_PATH` | Hedef dizin (`/var/www/devbar-site`) |
 | `STRAPI_URL` | Strapi API URL (`https://admin.devbar.bar`) |
 
-### SSH Key Uretme
+### SSH Key Üretme
 
 ```bash
 # Lokal makinede
@@ -59,14 +59,14 @@ ssh-keygen -t ed25519 -f deploy_key -C "github-actions-deploy"
 
 # Public key'i VPS'e ekle
 cat deploy_key.pub
-# → VPS'te /home/deploy/.ssh/authorized_keys dosyasina ekle
+# → VPS'te /home/deploy/.ssh/authorized_keys dosyasına ekle
 
 # Private key'i GitHub secret olarak ekle
 cat deploy_key
 # → GitHub repo → Settings → Secrets → DEPLOY_SSH_KEY
 ```
 
-## Yapi
+## Yapı
 
 ```
 site/
@@ -81,15 +81,15 @@ site/
 └── pages/
     ├── index.vue             # Ana sayfa — galeri listesi
     └── gallery/
-        └── [id].vue          # Galeri detay sayfasi
+    └── [id].vue          # Galeri detay sayfası
 ```
 
-## Akis
+## Akış
 
 ```
 Strapi Publish
     ↓
-webhook-relay (X-Hook-Secret dogrulama)
+webhook-relay (X-Hook-Secret doğrulama)
     ↓
 GitHub API repository_dispatch
     ↓
@@ -99,5 +99,5 @@ rsync → VPS:/var/www/devbar-site
     ↓
 nginx reload
     ↓
-devbar.bar guncellendi
+devbar.bar güncellendi
 ```

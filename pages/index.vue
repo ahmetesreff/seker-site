@@ -27,19 +27,19 @@ const products = [
     <section class="hero section">
       <div>
         <span class="eyebrow">1993'ten beri Trabzon</span>
-        <h1 class="hero-title">Dogal tas projelerinde guvenilir cozum.</h1>
+        <h1 class="hero-title">Doğal taş projelerinde güvenilir çözüm.</h1>
         <p class="hero-lede">
-          Mermer, granit ve kuvars uygulamalarini kurumsal ve konut projelerinde
-          titizlikle uretir, uygulariz.
+          Mermer, granit ve kuvars uygulamalarını kurumsal ve konut projelerinde
+          titizlikle üretir, uygularız.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Teklif al</a>
-          <a href="#gallery" class="btn btn-ghost">Galeriyi gor</a>
+          <a href="#gallery" class="btn btn-ghost">Galeriyi gör</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-label">Kurulus</span>
+            <span class="stat-label">Kuruluş</span>
             <span class="stat-value">1993</span>
           </div>
           <div class="stat">
@@ -48,7 +48,7 @@ const products = [
           </div>
           <div class="stat">
             <span class="stat-label">Saha</span>
-            <span class="stat-value">3 arac</span>
+            <span class="stat-value">3 araç</span>
           </div>
         </div>
       </div>
@@ -63,10 +63,10 @@ const products = [
     <section id="about" class="section">
       <div class="section-head">
         <div>
-          <h2 class="section-title">Hakkimizda</h2>
+          <h2 class="section-title">Hakkımızda</h2>
           <p class="section-subtitle">
-            Seker Mermer Ins. San. ve Tic. Ltd. Sti, 1993 yilindan bu yana
-            Trabzon ve cevre illerde mermer ve granit imalatinda hizmet verir.
+            Şeker Mermer İnş. San. ve Tic. Ltd. Şti, 1993 yılından bu yana
+            Trabzon ve çevre illerde mermer ve granit imalatında hizmet verir.
           </p>
         </div>
       </div>
@@ -74,37 +74,37 @@ const products = [
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Firmamiz Aydin Yilmaz tarafindan mermer ve granit imalati uzerine
-            1993 yilinda Trabzon'da kurulmustur. Kurulus tarihinden itibaren
-            uretim kapasitesini arttirarak bolgedeki kurumsal ve profesyonel
-            projelere hizmet sunmaktayiz.
+            Firmamız Aydın Yılmaz tarafından mermer ve granit imalatı üzerine
+            1993 yılında Trabzon'da kurulmuştur. Kuruluş tarihinden itibaren
+            üretim kapasitesini artırarak bölgedeki kurumsal ve profesyonel
+            projelere hizmet sunmaktayız.
           </p>
           <p>
-            Deneyimli kadromuzla is merkezleri, yapi ve sanayi insaatlari,
-            daireler, mutfak tezgahlari, mezarlik, somine ve mermer pano
-            uygulamalarinda uretim ve montaj sureclerini yonetiyoruz.
+            Deneyimli kadromuzla iş merkezleri, yapı ve sanayi inşaatları,
+            daireler, mutfak tezgahları, mezarlık, şömine ve mermer pano
+            uygulamalarında üretim ve montaj süreçlerini yönetiyoruz.
           </p>
           <p>
-            Hedefimiz; kaliteli hizmet vererek musteri memnuniyetini surekli
-            gelistirmek ve mermer granit sektorunde bolgemizi markamizla
-            birlikte daha iyi tanitmaktir.
+            Hedefimiz; kaliteli hizmet vererek müşteri memnuniyetini sürekli
+            geliştirmek ve mermer granit sektöründe bölgemizi markamızla
+            birlikte daha iyi tanıtmaktır.
           </p>
         </div>
         <div class="about-panel">
           <div class="about-card">
             <span class="card-title">Kurumsal deneyim</span>
-            <span class="card-value">30+ yil</span>
+            <span class="card-value">30+ yıl</span>
             <span class="card-meta">Trabzon merkezli</span>
           </div>
           <div class="about-card">
-            <span class="card-title">Uretim ve montaj</span>
+            <span class="card-title">Üretim ve montaj</span>
             <span class="card-value">Mermer + Granit</span>
             <span class="card-meta">Kurumsal projeler</span>
           </div>
           <div class="about-card">
             <span class="card-title">Ekip ve lojistik</span>
             <span class="card-value">6 personel</span>
-            <span class="card-meta">3 arac ile servis</span>
+            <span class="card-meta">3 araç ile servis</span>
           </div>
         </div>
       </div>
@@ -115,36 +115,36 @@ const products = [
         <div>
           <h2 class="section-title">Hizmetler</h2>
           <p class="section-subtitle">
-            Projeye uygun dogal tas secimi, uretim ve uygulama sureclerini
-            anahtar teslim yurutuyoruz.
+            Projeye uygun doğal taş seçimi, üretim ve uygulama süreçlerini
+            anahtar teslim yürütüyoruz.
           </p>
         </div>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
-          <h3>Mermer ve granit imalati</h3>
-          <p>Kesim, sekillendirme ve montaj surecleri.</p>
+          <h3>Mermer ve granit imalatı</h3>
+          <p>Kesim, şekillendirme ve montaj süreçleri.</p>
         </div>
         <div class="service-card">
-          <h3>Kuvars yuzey uygulamalari</h3>
-          <p>Mutfak, banyo ve ic mekan cozumleri.</p>
+          <h3>Kuvars yüzey uygulamaları</h3>
+          <p>Mutfak, banyo ve iç mekan çözümleri.</p>
         </div>
         <div class="service-card">
-          <h3>Mutfak tezgahlari</h3>
-          <p>Olcuye ozel uretim ve uygulama.</p>
+          <h3>Mutfak tezgahları</h3>
+          <p>Ölçüye özel üretim ve uygulama.</p>
         </div>
         <div class="service-card">
-          <h3>Banyo ve zemin kaplamalari</h3>
-          <p>Dayanikli, uzun omurlu kaplama isleri.</p>
+          <h3>Banyo ve zemin kaplamaları</h3>
+          <p>Dayanıklı, uzun ömürlü kaplama işleri.</p>
         </div>
         <div class="service-card">
-          <h3>Mermer pano ve somine</h3>
-          <p>Dekoratif ve kurumsal alan uygulamalari.</p>
+          <h3>Mermer pano ve şömine</h3>
+          <p>Dekoratif ve kurumsal alan uygulamaları.</p>
         </div>
         <div class="service-card">
-          <h3>Mezarlik ve ozel isler</h3>
-          <p>Geleneksel ve modern tasarimlar.</p>
+          <h3>Mezarlık ve özel işler</h3>
+          <p>Geleneksel ve modern tasarımlar.</p>
         </div>
       </div>
     </section>
@@ -154,7 +154,7 @@ const products = [
         <div>
           <h2 class="section-title">Granit Koleksiyonu</h2>
           <p class="section-subtitle">
-            Secli granit desenleri ve uygulama ornekleri.
+            Seçili granit desenleri ve uygulama örnekleri.
           </p>
         </div>
       </div>
@@ -177,8 +177,8 @@ const products = [
         <div>
           <h2 class="section-title">Galeriler</h2>
           <p class="section-subtitle">
-            Secli isler ve referanslar. Her galeri, kendi detay sayfasinda
-            tum gorselleriyle yer alir.
+            Seçili işler ve referanslar. Her galeri, kendi detay sayfasında
+            tüm görselleriyle yer alır.
           </p>
         </div>
         <span class="hero-meta">{{ itemCount }} toplam</span>
@@ -202,13 +202,13 @@ const products = [
           </div>
           <div class="gallery-body">
             <h3 class="gallery-title">{{ item.attributes.title }}</h3>
-            <span class="gallery-cta">Galeriyi gor &rarr;</span>
+            <span class="gallery-cta">Galeriyi gör &rarr;</span>
           </div>
         </NuxtLink>
       </div>
 
       <div v-if="!items?.length" class="empty-state">
-        Henuz icerik yok. Strapi uzerinden yeni galeri ekleyebilirsiniz.
+        Henüz içerik yok. Strapi üzerinden yeni galeri ekleyebilirsiniz.
       </div>
     </section>
 
@@ -217,7 +217,7 @@ const products = [
         <div>
           <h2 class="section-title">Markalar</h2>
           <p class="section-subtitle">
-            Is ortaklarimiz ve markalarimizi burada listeliyoruz.
+            İş ortaklarımız ve markalarımızı burada listeliyoruz.
           </p>
         </div>
       </div>
@@ -235,9 +235,9 @@ const products = [
     <section id="contact" class="section contact">
       <div class="section-head">
         <div>
-          <h2 class="section-title">Iletisim</h2>
+          <h2 class="section-title">İletişim</h2>
           <p class="section-subtitle">
-            Projeleriniz icin teklif almak isterseniz bize ulasin.
+            Projeleriniz için teklif almak isterseniz bize ulaşın.
           </p>
         </div>
       </div>
@@ -245,20 +245,20 @@ const products = [
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Adres</h3>
-          <p>Demirkirlar Is Merkezi No:64</p>
-          <p>Degirmendere, Trabzon / TURKIYE</p>
+          <p>Demirkırlar İş Merkezi No:64</p>
+          <p>Değirmendere, Trabzon / TÜRKİYE</p>
           <a href="https://www.sekermermer.com" class="contact-link">
             www.sekermermer.com
           </a>
         </div>
         <div class="contact-card">
-          <h3>Iletisim</h3>
+          <h3>İletişim</h3>
           <p>
             Telefon:
             <a href="tel:+904623253601">+90 462 325 36 01</a>
           </p>
           <p>
-            Fax:
+            Faks:
             <a href="tel:+904623281215">+90 462 328 12 15</a>
           </p>
           <p>
@@ -267,10 +267,10 @@ const products = [
           </p>
         </div>
         <div class="contact-card contact-highlight">
-          <h3>Hizli teklif</h3>
+          <h3>Hızlı teklif</h3>
           <p>
-            Projenizi kisaca anlatin, uygun malzeme ve fiyatlandirmayi
-            birlikte planlayalim.
+            Projenizi kısaca anlatın, uygun malzeme ve fiyatlandırmayı
+            birlikte planlayalım.
           </p>
           <a href="mailto:info@sekermermer.com" class="btn btn-primary">
             Teklif iste
