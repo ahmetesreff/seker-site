@@ -2,6 +2,7 @@
 const { fetchGalleryItems, strapiUrl } = useStrapi();
 const { data: items } = await useAsyncData("gallery-items", fetchGalleryItems);
 const itemCount = computed(() => items.value?.length ?? 0);
+const heroItems = computed(() => (items.value ?? []).slice(-3));
 
 const products = [
   {
@@ -54,9 +55,47 @@ const products = [
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="tile tile-a"></div>
-        <div class="tile tile-b"></div>
-        <div class="tile tile-c"></div>
+        <div v-if="heroItems.length" class="hero-collage">
+          <div
+            v-for="(item, index) in heroItems"
+            :key="item.id"
+            class="hero-shot"
+            :class="`hero-shot-${index + 1}`"
+          >
+            <img
+              :src="strapiUrl(item.attributes.coverImage.data.attributes.url)"
+              :alt="item.attributes.title"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+        <div v-else class="hero-collage">
+          <div class="hero-shot hero-shot-1">
+            <img
+              src="/products/rosavel.jpg"
+              alt="Rosavel granit"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-shot hero-shot-2">
+            <img
+              src="/products/rosa-porrino.jpg"
+              alt="Rosa Porrino granit"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="hero-shot hero-shot-3">
+            <img
+              src="/products/rosa-beta.webp"
+              alt="Rosa Beta granit"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
