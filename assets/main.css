@@ -338,9 +338,14 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #fff;
-  box-shadow: 0 14px 32px rgba(196, 27, 42, 0.25);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: rgba(196, 27, 42, 0.2);
 }
 
 .btn-ghost {
