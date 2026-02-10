@@ -55,7 +55,7 @@ onUnmounted(() => { if (timer) clearInterval(timer); });
 </script>
 
 <template>
-  <section class="hero section">
+  <section class="hero section stone-bg">
     <div>
       <span class="eyebrow">1993'ten beri Trabzon</span>
       <h1 class="hero-title">Doğal taş projelerinde güvenilir çözüm.</h1>

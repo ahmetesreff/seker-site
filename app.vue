@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
       <NuxtPage />
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer stone-bg">
       <span>© 2026 Şeker Mermer</span>
       <span>Mermer ve granit uygulamaları.</span>
     </footer>
