@@ -360,6 +360,7 @@ img {
   background: linear-gradient(140deg, #fff1f2 0%, #f0dfe0 50%, #d7c2c4 100%);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  cursor: pointer;
 }
 
 .hero-stack {
@@ -378,7 +379,9 @@ img {
   box-shadow: var(--shadow-soft);
   border: 3px solid rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.3);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    z-index 0s 0.3s;
 }
 
 .hero-shot img {
@@ -402,16 +405,38 @@ img {
   transform: translate(-50%, -50%) rotate(8deg) translate(10%, -8%);
 }
 
-.hero-stack:hover .hero-shot-1 {
-  transform: translate(-50%, -50%) rotate(-12deg) translate(-35%, 8%);
+.hero-shot-hidden {
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.hero-stack:hover .hero-shot-2 {
-  transform: translate(-50%, -50%) rotate(0deg) translate(0, -8%);
+.hero-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
 }
 
-.hero-stack:hover .hero-shot-3 {
-  transform: translate(-50%, -50%) rotate(14deg) translate(30%, -8%);
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-dot.active {
+  background: #fff;
+  transform: scale(1.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .section-head {
@@ -1016,16 +1041,8 @@ img {
     transform: translate(-50%, -50%) rotate(5deg) translate(7%, -5%);
   }
 
-  .hero-stack:hover .hero-shot-1 {
-    transform: translate(-50%, -50%) rotate(-4deg) translate(-8%, 6%);
-  }
-
-  .hero-stack:hover .hero-shot-2 {
-    transform: translate(-50%, -50%) rotate(1deg) translate(0, -1%);
-  }
-
-  .hero-stack:hover .hero-shot-3 {
-    transform: translate(-50%, -50%) rotate(5deg) translate(7%, -5%);
+  .hero-shot-hidden {
+    transform: translate(-50%, -50%) scale(0.85);
   }
 
   .section-head {
