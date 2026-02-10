@@ -14,6 +14,8 @@
   --radius-lg: 28px;
   --radius-md: 18px;
   --radius-sm: 12px;
+  --header-height: 88px;
+  --header-height-compact: 64px;
   --font-display: "Fraunces", serif;
   --font-sans: "Manrope", sans-serif;
 }
@@ -85,6 +87,14 @@ img {
   z-index: 10;
   backdrop-filter: blur(12px);
   background: linear-gradient(to bottom, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.2));
+  min-height: var(--header-height);
+  transition: padding 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-header.is-compact {
+  padding: 0.9rem 7vw 0.4rem;
+  min-height: var(--header-height-compact);
+  box-shadow: 0 8px 24px rgba(28, 32, 29, 0.12);
 }
 
 .brand {
@@ -105,6 +115,20 @@ img {
   padding: 6px;
   object-fit: contain;
   box-shadow: var(--shadow-soft);
+}
+
+.site-header.is-compact .brand-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.site-header.is-compact .brand-text {
+  font-size: 0.95rem;
+}
+
+.site-header.is-compact .brand-subtext {
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
 }
 
 .brand-block {
@@ -167,6 +191,10 @@ img {
   cursor: pointer;
   gap: 0.6rem;
   padding: 0 0.9rem;
+}
+
+.site-header.is-compact .menu-toggle {
+  height: 38px;
 }
 
 .menu-toggle-icon {
@@ -905,6 +933,14 @@ img {
     gap: 0.75rem;
     position: sticky;
     top: 0;
+  }
+
+  .site-main {
+    padding-top: calc(1.5rem + var(--header-height));
+  }
+
+  .site-header.is-compact + .site-main {
+    padding-top: calc(1.2rem + var(--header-height-compact));
   }
 
   .menu-toggle {

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const isMenuOpen = ref(false);
+const isCompact = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -10,11 +11,24 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
+
+const updateCompact = () => {
+  isCompact.value = window.scrollY > 12;
+};
+
+onMounted(() => {
+  updateCompact();
+  window.addEventListener("scroll", updateCompact, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateCompact);
+});
 </script>
 
 <template>
   <div class="app">
-    <header class="site-header">
+    <header class="site-header" :class="{ 'is-compact': isCompact }">
       <NuxtLink to="/" class="brand" @click="closeMenu">
         <img
           class="brand-logo"
