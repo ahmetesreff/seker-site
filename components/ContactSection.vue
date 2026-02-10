@@ -9,7 +9,7 @@ const props = withDefaults(
 </script>
 
 <template>
-  <section class="section contact stone-bg">
+  <section class="section contact">
     <div class="section-head">
       <div>
         <component :is="props.titleTag" class="section-title">İletişim</component>
