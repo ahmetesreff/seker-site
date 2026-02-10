@@ -2,8 +2,22 @@
 const props = withDefaults(
   defineProps<{
     titleTag?: "h1" | "h2";
+    compact?: boolean;
   }>(),
-  { titleTag: "h2" }
+  { titleTag: "h2", compact: false }
+);
+
+const services = [
+  { title: "Mermer ve granit imalatı", desc: "Kesim, şekillendirme ve montaj süreçleri." },
+  { title: "Kuvars yüzey uygulamaları", desc: "Mutfak, banyo ve iç mekan çözümleri." },
+  { title: "Mutfak tezgahları", desc: "Ölçüye özel üretim ve uygulama." },
+  { title: "Banyo ve zemin kaplamaları", desc: "Dayanıklı, uzun ömürlü kaplama işleri." },
+  { title: "Mermer pano ve şömine", desc: "Dekoratif ve kurumsal alan uygulamaları." },
+  { title: "Mezarlık ve özel işler", desc: "Geleneksel ve modern tasarımlar." },
+];
+
+const visibleServices = computed(() =>
+  props.compact ? services.slice(0, 3) : services
 );
 </script>
 
@@ -20,30 +34,14 @@ const props = withDefaults(
     </div>
 
     <div class="services-grid">
-      <div class="service-card">
-        <h3>Mermer ve granit imalatı</h3>
-        <p>Kesim, şekillendirme ve montaj süreçleri.</p>
+      <div v-for="service in visibleServices" :key="service.title" class="service-card">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.desc }}</p>
       </div>
-      <div class="service-card">
-        <h3>Kuvars yüzey uygulamaları</h3>
-        <p>Mutfak, banyo ve iç mekan çözümleri.</p>
-      </div>
-      <div class="service-card">
-        <h3>Mutfak tezgahları</h3>
-        <p>Ölçüye özel üretim ve uygulama.</p>
-      </div>
-      <div class="service-card">
-        <h3>Banyo ve zemin kaplamaları</h3>
-        <p>Dayanıklı, uzun ömürlü kaplama işleri.</p>
-      </div>
-      <div class="service-card">
-        <h3>Mermer pano ve şömine</h3>
-        <p>Dekoratif ve kurumsal alan uygulamaları.</p>
-      </div>
-      <div class="service-card">
-        <h3>Mezarlık ve özel işler</h3>
-        <p>Geleneksel ve modern tasarımlar.</p>
-      </div>
+    </div>
+
+    <div v-if="props.compact" class="section-more">
+      <NuxtLink to="/hizmetler">Tüm hizmetler &rarr;</NuxtLink>
     </div>
   </section>
 </template>

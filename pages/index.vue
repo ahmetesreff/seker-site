@@ -1,11 +1,11 @@
 <template>
   <div>
     <HeroSection />
-    <AboutSection />
-    <ServicesSection />
-    <ProductsSection />
-    <GallerySection />
-    <BrandsSection />
-    <ContactSection />
+    <AboutSection :compact="true" />
+    <ServicesSection :compact="true" />
+    <ProductsSection :compact="true" />
+    <GallerySection :compact="true" />
+    <BrandsSection :compact="true" />
+    <ContactSection :compact="true" />
   </div>
 </template>

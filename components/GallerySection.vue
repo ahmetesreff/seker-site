@@ -3,12 +3,16 @@ const props = withDefaults(
   defineProps<{
     titleTag?: "h1" | "h2";
     showCount?: boolean;
+    compact?: boolean;
   }>(),
-  { titleTag: "h2", showCount: true }
+  { titleTag: "h2", showCount: true, compact: false }
 );
 
 const { items, itemCount, strapiUrl } = useGalleryItemsData();
-const safeItems = computed(() => items.value ?? []);
+const safeItems = computed(() => {
+  const all = items.value ?? [];
+  return props.compact ? all.slice(0, 3) : all;
+});
 </script>
 
 <template>
@@ -21,7 +25,7 @@ const safeItems = computed(() => items.value ?? []);
           yer alır.
         </p>
       </div>
-      <span v-if="props.showCount" class="hero-meta">{{ itemCount }} toplam</span>
+      <span v-if="props.showCount && !props.compact" class="hero-meta">{{ itemCount }} toplam</span>
     </div>
 
     <div class="gallery-grid">
@@ -49,6 +53,10 @@ const safeItems = computed(() => items.value ?? []);
 
     <div v-if="!safeItems.length" class="empty-state">
       Henüz içerik yok. Strapi üzerinden yeni galeri ekleyebilirsiniz.
+    </div>
+
+    <div v-if="props.compact" class="section-more">
+      <NuxtLink to="/galeri">Tüm galeri &rarr;</NuxtLink>
     </div>
   </section>
 </template>

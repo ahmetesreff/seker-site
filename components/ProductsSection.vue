@@ -2,8 +2,9 @@
 const props = withDefaults(
   defineProps<{
     titleTag?: "h1" | "h2";
+    compact?: boolean;
   }>(),
-  { titleTag: "h2" }
+  { titleTag: "h2", compact: false }
 );
 
 const products = [
@@ -44,6 +45,10 @@ const products = [
           <span class="product-meta">{{ product.meta }}</span>
         </div>
       </article>
+    </div>
+
+    <div v-if="props.compact" class="section-more">
+      <NuxtLink to="/urunler">Tüm ürünler &rarr;</NuxtLink>
     </div>
   </section>
 </template>
