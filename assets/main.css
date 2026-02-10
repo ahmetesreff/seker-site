@@ -88,7 +88,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 7vw 0.5rem;
+  padding: 1.5rem 7vw;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -96,9 +96,36 @@ img {
   -webkit-backdrop-filter: blur(12px);
   background: linear-gradient(to bottom, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.2));
   min-height: var(--header-height);
-  transition: padding 0.2s ease, box-shadow 0.2s ease;
+  transition: padding 0.3s ease, min-height 0.3s ease, box-shadow 0.3s ease;
   transform: translateZ(0);
   will-change: transform;
+}
+
+.site-header.is-compact {
+  padding: 0.6rem 7vw;
+  min-height: var(--header-height-compact);
+  box-shadow: 0 4px 20px rgba(28, 32, 29, 0.1);
+}
+
+.site-header.is-compact .brand-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.site-header.is-compact .brand-text {
+  font-size: 0.95rem;
+}
+
+.site-header.is-compact .brand-subtext {
+  font-size: 0.7rem;
+}
+
+.site-header.is-compact .site-nav {
+  font-size: 0.84rem;
+}
+
+.site-header.is-compact .site-nav a {
+  padding: 0.35rem 0.75rem;
 }
 
 .brand {
@@ -119,6 +146,7 @@ img {
   padding: 6px;
   object-fit: contain;
   box-shadow: var(--shadow-soft);
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
 
@@ -258,6 +286,25 @@ img {
   font-size: clamp(2.6rem, 4vw, 4.1rem);
   line-height: 1.05;
   margin: 0.75rem 0 1rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.hero-tags li {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
 }
 
 .hero-lede {

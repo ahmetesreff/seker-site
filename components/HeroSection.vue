@@ -59,9 +59,15 @@ onUnmounted(() => { if (timer) clearInterval(timer); });
     <div>
       <span class="eyebrow">1993'ten beri Trabzon</span>
       <h1 class="hero-title">Doğal taş projelerinde güvenilir çözüm.</h1>
+      <ul class="hero-tags">
+        <li>Trabzon mermer firması</li>
+        <li>Granit tezgah imalatı</li>
+        <li>Kuvars mutfak tezgahı</li>
+      </ul>
       <p class="hero-lede">
-        Mermer, granit ve kuvars uygulamalarını kurumsal ve konut projelerinde
-        titizlikle üretir, uygularız.
+        Trabzon'da mermer, granit ve kuvars tezgah imalatı, kesim, üretim ve
+        montaj hizmetleri. Mutfak tezgahı, banyo, merdiven ve cephe
+        projelerinizde yanınızdayız.
       </p>
       <div class="hero-actions">
         <NuxtLink to="/iletisim" class="btn btn-primary">Teklif al</NuxtLink>

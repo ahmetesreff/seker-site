@@ -30,13 +30,13 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      title: "Şeker Mermer",
+      title: "Şeker Mermer | Trabzon Mermer ve Granit İmalatı",
       htmlAttrs: { lang: "tr" },
       meta: [
         {
           name: "description",
           content:
-            "Şeker Mermer, Trabzon’da mermer, granit ve kuvars uygulamalarında üretim ve montaj hizmetleri sunar.",
+            "Trabzon mermer firması Şeker Mermer: granit tezgah imalatı, kuvars mutfak tezgahı, banyo, merdiven ve cephe uygulamaları. 1993'ten beri üretim ve montaj.",
         },
       ],
       link: [
