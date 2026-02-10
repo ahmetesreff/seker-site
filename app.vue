@@ -14,6 +14,7 @@
         </span>
       </NuxtLink>
       <nav class="site-nav">
+        <a href="#home">Ana Sayfa</a>
         <a href="#about">Hakkımızda</a>
         <a href="#services">Hizmetler</a>
         <a href="#products">Ürünler</a>

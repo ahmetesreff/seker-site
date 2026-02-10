@@ -3,6 +3,7 @@ const { fetchGalleryItems, strapiUrl } = useStrapi();
 const { data: items } = await useAsyncData("gallery-items", fetchGalleryItems);
 const itemCount = computed(() => items.value?.length ?? 0);
 const heroItems = computed(() => (items.value ?? []).slice(-3));
+const route = useRoute();
 
 const products = [
   {
@@ -21,11 +22,51 @@ const products = [
     meta: "Granit",
   },
 ];
+
+const brands = [
+  {
+    name: "Belenco",
+    logo: "/brands/belenco-logo.png",
+  },
+  {
+    name: "Çimstone",
+    logo: "/brands/cimstone-logo.png",
+  },
+  {
+    name: "Kromevye",
+    logo: "/brands/kromevye-logo.png",
+  },
+  {
+    name: "Orient",
+    logo: "/brands/orient-logo.png",
+  },
+];
+
+const sectionTitles: Record<string, string> = {
+  "#home": "Ana Sayfa",
+  "#about": "Hakkımızda",
+  "#services": "Hizmetler",
+  "#products": "Ürünler",
+  "#gallery": "Galeri",
+  "#brands": "Markalar",
+  "#contact": "İletişim",
+};
+
+const pageTitle = computed(() => {
+  const base = "Şeker Mermer";
+  const hash = route.hash?.toLowerCase();
+  const section = hash && sectionTitles[hash];
+  return section ? `${section} | ${base}` : base;
+});
+
+useHead(() => ({
+  title: pageTitle.value,
+}));
 </script>
 
 <template>
   <div>
-    <section class="hero section">
+    <section id="home" class="hero section">
       <div>
         <span class="eyebrow">1993'ten beri Trabzon</span>
         <h1 class="hero-title">Doğal taş projelerinde güvenilir çözüm.</h1>
@@ -262,12 +303,12 @@ const products = [
       </div>
 
       <div class="brands-grid">
-        <div class="brand-chip">Marka 1</div>
-        <div class="brand-chip">Marka 2</div>
-        <div class="brand-chip">Marka 3</div>
-        <div class="brand-chip">Marka 4</div>
-        <div class="brand-chip">Marka 5</div>
-        <div class="brand-chip">Marka 6</div>
+        <div v-for="brand in brands" :key="brand.name" class="brand-card">
+          <div class="brand-logo-wrap">
+            <img :src="brand.logo" :alt="brand.name" loading="lazy" />
+          </div>
+          <span class="brand-name">{{ brand.name }}</span>
+        </div>
       </div>
     </section>
 
@@ -315,20 +356,31 @@ const products = [
             Teklif iste
           </a>
         </div>
-        <div class="contact-card map-card">
-          <h3>Harita</h3>
-          <div class="map-embed">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5763.748171387792!2d39.751754877662904!3d40.997586871352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643c6a77a2615d%3A0x20662aa8b69aff!2s%C5%9Eeker%20Mermer!5e1!3m2!1str!2str!4v1770710156484!5m2!1str!2str"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Şeker Mermer harita"
-            ></iframe>
-          </div>
+      </div>
+
+      <div class="contact-map">
+        <h3>Harita</h3>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5763.748171387792!2d39.751754877662904!3d40.997586871352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643c6a77a2615d%3A0x20662aa8b69aff!2s%C5%9Eeker%20Mermer!5e1!3m2!1str!2str!4v1770710156484!5m2!1str!2str"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Şeker Mermer harita"
+          ></iframe>
+        </div>
+        <div class="map-actions">
+          <a
+            class="btn btn-ghost"
+            href="https://www.google.com/maps/dir/?api=1&destination=%C5%9Eeker%20Mermer%20De%C4%9Firmendere%20Trabzon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Yol tarifi al
+          </a>
         </div>
       </div>
     </section>
