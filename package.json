@@ -12,6 +12,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fontsource/fraunces": "^5.0.0",
+    "@fontsource/manrope": "^5.0.0",
     "nuxt": "^3.14.0",
     "vue": "^3.5.0",
     "vue-router": "^4.4.0"

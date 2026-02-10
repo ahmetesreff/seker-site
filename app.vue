@@ -18,7 +18,7 @@ const closeMenu = () => {
       <NuxtLink to="/" class="brand" @click="closeMenu">
         <img
           class="brand-logo"
-          src="/logo.png"
+          src="/logo.webp"
           alt="Şeker Mermer logo"
           loading="eager"
         />
