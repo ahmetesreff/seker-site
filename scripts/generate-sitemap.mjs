@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
 const publicDir = resolve(rootDir, "public");
 
-const siteUrl = (process.env.SITE_URL || "https://devbar.bar").replace(/\/$/, "");
+const siteUrl = (process.env.SITE_URL || "https://devbar.com").replace(/\/$/, "");
 const strapiUrl = (process.env.STRAPI_URL || "http://localhost:1337").replace(/\/$/, "");
 
 const today = new Date().toISOString();
@@ -66,6 +66,14 @@ async function run() {
   ].join("\n");
 
   await writeFile(resolve(publicDir, "sitemap.xml"), xml, "utf8");
+  const robots = [
+    "User-agent: *",
+    "Allow: /",
+    "",
+    `Sitemap: ${siteUrl}/sitemap.xml`,
+    "",
+  ].join("\n");
+  await writeFile(resolve(publicDir, "robots.txt"), robots, "utf8");
   console.log(`[sitemap] Generated ${urls.length} urls`);
 }
 

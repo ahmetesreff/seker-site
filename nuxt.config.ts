@@ -32,6 +32,17 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
       title: "Şeker Mermer",
       htmlAttrs: { lang: "tr" },
+      meta: [
+        {
+          name: "description",
+          content:
+            "Şeker Mermer, Trabzon’da mermer, granit ve kuvars uygulamalarında üretim ve montaj hizmetleri sunar.",
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/webp", href: "/logo.webp" },
+        { rel: "apple-touch-icon", href: "/logo.webp" },
+      ],
     },
   },
 

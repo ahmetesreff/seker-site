@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devbar.bar/sitemap.xml
+Sitemap: https://devbar.com/sitemap.xml
