@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue";
-
 const isMenuOpen = ref(false);
 const isCompact = ref(false);
-
-const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -19,24 +15,24 @@ const onBrandClick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const updateCompact = () => {
-  if (!isMobile()) {
-    isCompact.value = false;
-    return;
+let ticking = false;
+const onScroll = () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      isCompact.value = window.scrollY > 20;
+      ticking = false;
+    });
+    ticking = true;
   }
-
-  isCompact.value = window.scrollY > 12;
 };
 
 onMounted(() => {
-  updateCompact();
-  window.addEventListener("scroll", updateCompact, { passive: true });
-  window.addEventListener("resize", updateCompact, { passive: true });
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", updateCompact);
-  window.removeEventListener("resize", updateCompact);
+  window.removeEventListener("scroll", onScroll);
 });
 </script>
 
