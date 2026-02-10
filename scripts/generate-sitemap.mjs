@@ -47,11 +47,21 @@ async function run() {
     console.warn(`[sitemap] Gallery fetch failed, continuing with homepage only: ${error.message}`);
   }
 
+  const staticRoutes = [
+    "/",
+    "/hakkimizda",
+    "/hizmetler",
+    "/urunler",
+    "/galeri",
+    "/markalar",
+    "/iletisim",
+  ];
+
   const urls = [
-    buildUrlEntry(`${siteUrl}/`, today),
+    ...staticRoutes.map((route) => buildUrlEntry(`${siteUrl}${route}`, today)),
     ...galleryItems.map((item) =>
       buildUrlEntry(
-        `${siteUrl}/gallery/${item.id}`,
+        `${siteUrl}/galeri/${item.id}`,
         item?.attributes?.updatedAt || today
       )
     ),

@@ -19,7 +19,7 @@ useHead({
 <template>
   <div v-if="item" class="detail">
     <div class="detail-header">
-      <NuxtLink to="/" class="back-pill">&larr; Geri</NuxtLink>
+      <NuxtLink to="/galeri" class="back-pill">&larr; Geri</NuxtLink>
       <span class="eyebrow">Galeri</span>
       <h1 class="detail-title">{{ item.attributes.title }}</h1>
     </div>
