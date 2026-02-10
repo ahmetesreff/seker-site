@@ -349,12 +349,14 @@ img {
 }
 
 .btn-whatsapp {
+  background: rgba(37, 211, 102, 0.12);
   border-color: #25d366;
-  color: #25d366;
+  color: #1a8f45;
+  justify-content: center;
 }
 
 .btn-whatsapp:hover {
-  background: rgba(37, 211, 102, 0.08);
+  background: rgba(37, 211, 102, 0.22);
 }
 
 .btn:hover {
@@ -788,7 +790,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-info {
@@ -802,8 +804,7 @@ img {
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
-  aspect-ratio: 4 / 3;
-  max-height: 320px;
+  min-height: 280px;
 }
 
 .contact-map iframe {
