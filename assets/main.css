@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --bg: #f7f0f0;
-  --surface: #fff6f7;
-  --surface-strong: #f2e3e4;
+  --bg: #f4eded;
+  --surface: #faf4f4;
+  --surface-strong: #ecdcdd;
   --ink: #1c201d;
   --muted: #5d645f;
   --accent: #c41b2a;
@@ -43,16 +43,16 @@ body::before {
   position: fixed;
   inset: -20vh -10vw;
   background:
-    linear-gradient(125deg, transparent 18%, rgba(180, 120, 115, 0.18) 21%, rgba(160, 105, 100, 0.10) 25%, transparent 29%),
-    linear-gradient(55deg, transparent 38%, rgba(190, 140, 130, 0.16) 41%, rgba(175, 130, 125, 0.08) 45%, transparent 49%),
-    linear-gradient(170deg, transparent 55%, rgba(140, 110, 108, 0.17) 58%, rgba(165, 128, 122, 0.09) 62%, transparent 66%),
-    linear-gradient(98deg, transparent 8%, rgba(195, 150, 140, 0.14) 11%, rgba(170, 135, 128, 0.07) 16%, transparent 20%),
-    linear-gradient(145deg, transparent 68%, rgba(155, 115, 112, 0.16) 71%, rgba(180, 140, 135, 0.08) 75%, transparent 79%),
-    linear-gradient(30deg, transparent 78%, rgba(185, 130, 125, 0.13) 81%, transparent 85%),
-    linear-gradient(82deg, transparent 42%, rgba(130, 105, 105, 0.12) 44%, transparent 47%),
-    radial-gradient(circle at 10% 10%, rgba(196, 27, 42, 0.18), transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(184, 56, 65, 0.12), transparent 55%),
-    radial-gradient(circle at 60% 80%, rgba(240, 215, 180, 0.20), transparent 55%);
+    linear-gradient(125deg, transparent 18%, rgba(130, 50, 55, 0.16) 21%, rgba(110, 40, 48, 0.09) 25%, transparent 29%),
+    linear-gradient(55deg, transparent 38%, rgba(140, 60, 62, 0.14) 41%, rgba(120, 52, 56, 0.07) 45%, transparent 49%),
+    linear-gradient(170deg, transparent 55%, rgba(105, 42, 50, 0.15) 58%, rgba(125, 55, 58, 0.08) 62%, transparent 66%),
+    linear-gradient(98deg, transparent 8%, rgba(145, 65, 65, 0.12) 11%, rgba(120, 50, 55, 0.06) 16%, transparent 20%),
+    linear-gradient(145deg, transparent 68%, rgba(115, 45, 52, 0.14) 71%, rgba(135, 58, 60, 0.07) 75%, transparent 79%),
+    linear-gradient(30deg, transparent 78%, rgba(125, 48, 55, 0.11) 81%, transparent 85%),
+    linear-gradient(82deg, transparent 42%, rgba(100, 40, 48, 0.10) 44%, transparent 47%),
+    radial-gradient(circle at 10% 10%, rgba(143, 19, 31, 0.20), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(130, 30, 40, 0.14), transparent 55%),
+    radial-gradient(circle at 60% 80%, rgba(200, 170, 150, 0.18), transparent 55%);
   z-index: -2;
   pointer-events: none;
 }
