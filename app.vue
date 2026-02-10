@@ -4,6 +4,8 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 const isMenuOpen = ref(false);
 const isCompact = ref(false);
 
+const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
@@ -13,16 +15,23 @@ const closeMenu = () => {
 };
 
 const updateCompact = () => {
+  if (!isMobile()) {
+    isCompact.value = false;
+    return;
+  }
+
   isCompact.value = window.scrollY > 12;
 };
 
 onMounted(() => {
   updateCompact();
   window.addEventListener("scroll", updateCompact, { passive: true });
+  window.addEventListener("resize", updateCompact, { passive: true });
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", updateCompact);
+  window.removeEventListener("resize", updateCompact);
 });
 </script>
 
