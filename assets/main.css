@@ -259,6 +259,7 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  align-items: stretch;
 }
 
 .stat {
@@ -267,6 +268,31 @@ img {
   border-radius: var(--radius-sm);
   padding: 0.8rem 1rem;
   box-shadow: var(--shadow-soft);
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.stat-label {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-value {
+  position: relative;
+  z-index: 1;
 }
 
 .stat-label {
