@@ -4,6 +4,7 @@ const { data: items } = await useAsyncData("gallery-items", fetchGalleryItems);
 const itemCount = computed(() => items.value?.length ?? 0);
 const heroItems = computed(() => (items.value ?? []).slice(-3));
 const route = useRoute();
+const sectionIds = ["home", "about", "services", "products", "gallery", "brands", "contact"];
 
 const products = [
   {
@@ -62,6 +63,40 @@ const pageTitle = computed(() => {
 useHead(() => ({
   title: pageTitle.value,
 }));
+
+onMounted(() => {
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter((el): el is HTMLElement => Boolean(el));
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting);
+      if (!visible.length) return;
+
+      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const target = visible[0]?.target as HTMLElement | undefined;
+      if (!target?.id) return;
+
+      const nextHash = `#${target.id}`;
+      if (route.hash === nextHash) return;
+
+      history.replaceState(null, "", nextHash);
+    },
+    {
+      rootMargin: "-20% 0px -55% 0px",
+      threshold: [0.25, 0.5, 0.75],
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+});
 </script>
 
 <template>

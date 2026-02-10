@@ -212,7 +212,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 3rem;
-  align-items: center;
+  align-items: stretch;
   margin-top: 1rem;
 }
 
@@ -345,6 +345,8 @@ img {
 .hero-visual {
   position: relative;
   min-height: 320px;
+  height: 100%;
+  align-self: stretch;
   border-radius: var(--radius-lg);
   background: linear-gradient(140deg, #fff1f2 0%, #f0dfe0 50%, #d7c2c4 100%);
   overflow: hidden;
@@ -434,7 +436,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .about-text {
@@ -443,6 +445,7 @@ img {
   border-radius: var(--radius-md);
   padding: 1.6rem 1.8rem;
   box-shadow: var(--shadow-soft);
+  height: 100%;
 }
 
 .about-text p {
@@ -457,6 +460,8 @@ img {
 .about-panel {
   display: grid;
   gap: 1rem;
+  height: 100%;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .about-card {
@@ -980,5 +985,10 @@ img {
 
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-panel {
+    height: auto;
+    grid-template-rows: none;
   }
 }
