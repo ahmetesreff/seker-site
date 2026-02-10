@@ -158,22 +158,35 @@ img {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 44px;
+  width: auto;
   height: 44px;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow-soft);
   cursor: pointer;
-  gap: 4px;
+  gap: 0.6rem;
+  padding: 0 0.9rem;
+}
+
+.menu-toggle-icon {
+  display: grid;
+  gap: 5px;
 }
 
 .menu-toggle-bar {
   display: block;
-  width: 18px;
+  width: 20px;
   height: 2px;
   border-radius: 999px;
   background: var(--accent-strong);
+}
+
+.menu-toggle-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
 }
 
 .site-main {
@@ -859,7 +872,8 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
   .menu-toggle {

@@ -36,9 +36,11 @@ const closeMenu = () => {
         aria-label="Menü"
         @click="toggleMenu"
       >
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-icon" aria-hidden="true">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </span>
+        <span class="menu-toggle-label">Menü</span>
       </button>
 
       <nav id="site-nav" class="site-nav" :class="{ 'is-open': isMenuOpen }">
