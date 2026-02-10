@@ -22,19 +22,8 @@ const sliderImages = computed(() => {
 const total = computed(() => sliderImages.value.length);
 const activeIndex = ref(0);
 
-function positionClass(index: number): string {
-  const len = total.value;
-  if (len <= 1) return 'hero-shot-2';
-
-  const diff = ((index - activeIndex.value) % len + len) % len;
-  if (diff === 0) return 'hero-shot-2';
-  if (diff === 1) return 'hero-shot-3';
-  if (diff === len - 1) return 'hero-shot-1';
-  return 'hero-shot-hidden';
-}
-
-function goTo(idx: number) {
-  activeIndex.value = idx;
+function prev() {
+  activeIndex.value = (activeIndex.value - 1 + total.value) % total.value;
   resetTimer();
 }
 
@@ -49,7 +38,7 @@ function startTimer() {
   if (total.value <= 1) return;
   timer = setInterval(() => {
     activeIndex.value = (activeIndex.value + 1) % total.value;
-  }, 4000);
+  }, 5000);
 }
 
 function resetTimer() {
@@ -96,37 +85,42 @@ onUnmounted(() => { if (timer) clearInterval(timer); });
     </div>
 
     <div
-      class="hero-visual"
-      aria-hidden="true"
+      class="hero-slider"
       @mouseenter="pauseTimer"
       @mouseleave="resetTimer"
-      @click="next"
     >
-      <div class="hero-stack">
-        <div
-          v-for="(img, index) in sliderImages"
-          :key="img.id"
-          class="hero-shot"
-          :class="positionClass(index)"
-        >
-          <img
-            :src="img.src"
-            :alt="img.alt"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
-
-      <div v-if="total > 1" class="hero-dots">
-        <button
-          v-for="(_, i) in sliderImages"
-          :key="i"
-          class="hero-dot"
-          :class="{ active: i === activeIndex }"
-          @click.stop="goTo(i)"
+      <div
+        v-for="(img, index) in sliderImages"
+        :key="img.id"
+        class="hero-slide"
+        :class="{ active: index === activeIndex }"
+      >
+        <img
+          :src="img.src"
+          :alt="img.alt"
+          loading="lazy"
+          decoding="async"
         />
       </div>
+
+      <template v-if="total > 1">
+        <button class="hero-arrow hero-arrow--prev" @click="prev" aria-label="Önceki">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hero-arrow hero-arrow--next" @click="next" aria-label="Sonraki">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="hero-dots">
+          <button
+            v-for="(_, i) in sliderImages"
+            :key="i"
+            class="hero-dot"
+            :class="{ active: i === activeIndex }"
+            @click="activeIndex = i; resetTimer()"
+          />
+        </div>
+      </template>
     </div>
   </section>
 </template>
