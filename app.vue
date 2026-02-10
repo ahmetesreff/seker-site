@@ -1,7 +1,21 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+</script>
+
 <template>
   <div class="app">
     <header class="site-header">
-      <NuxtLink to="/" class="brand">
+      <NuxtLink to="/" class="brand" @click="closeMenu">
         <img
           class="brand-logo"
           src="/logo.png"
@@ -13,14 +27,28 @@
           <span class="brand-subtext">Mermer ve Granit</span>
         </span>
       </NuxtLink>
-      <nav class="site-nav">
-        <a href="#home">Ana Sayfa</a>
-        <a href="#about">Hakkımızda</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#products">Ürünler</a>
-        <a href="#gallery">Galeri</a>
-        <a href="#brands">Markalar</a>
-        <a href="#contact" class="nav-cta">İletişim</a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        :aria-expanded="isMenuOpen"
+        aria-controls="site-nav"
+        aria-label="Menü"
+        @click="toggleMenu"
+      >
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" :class="{ 'is-open': isMenuOpen }">
+        <a href="#home" @click="closeMenu">Ana Sayfa</a>
+        <a href="#about" @click="closeMenu">Hakkımızda</a>
+        <a href="#services" @click="closeMenu">Hizmetler</a>
+        <a href="#products" @click="closeMenu">Ürünler</a>
+        <a href="#gallery" @click="closeMenu">Galeri</a>
+        <a href="#brands" @click="closeMenu">Markalar</a>
+        <a href="#contact" class="nav-cta" @click="closeMenu">İletişim</a>
       </nav>
     </header>
 
