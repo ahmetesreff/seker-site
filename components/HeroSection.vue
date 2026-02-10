@@ -34,7 +34,7 @@ const heroItems = computed(() => (items.value ?? []).slice(-3));
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div v-if="heroItems.length" class="hero-collage">
+      <div v-if="heroItems.length" class="hero-stack">
         <div
           v-for="(item, index) in heroItems"
           :key="item.id"
@@ -49,7 +49,7 @@ const heroItems = computed(() => (items.value ?? []).slice(-3));
           />
         </div>
       </div>
-      <div v-else class="hero-collage">
+      <div v-else class="hero-stack">
         <div class="hero-shot hero-shot-1">
           <img src="/products/rosavel.jpg" alt="Rosavel granit" loading="lazy" decoding="async" />
         </div>
