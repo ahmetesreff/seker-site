@@ -14,6 +14,11 @@ const closeMenu = () => {
   isMenuOpen.value = false;
 };
 
+const onBrandClick = () => {
+  closeMenu();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
 const updateCompact = () => {
   if (!isMobile()) {
     isCompact.value = false;
@@ -38,7 +43,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="app">
     <header class="site-header" :class="{ 'is-compact': isCompact }">
-      <NuxtLink to="/" class="brand" @click="closeMenu">
+      <NuxtLink to="/" class="brand" @click="onBrandClick">
         <img
           class="brand-logo"
           src="/logo.webp"
