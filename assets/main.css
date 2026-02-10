@@ -479,6 +479,11 @@ img {
   margin-bottom: 0;
 }
 
+.about-cta {
+  margin-top: 2rem;
+  max-width: 480px;
+}
+
 .about-panel {
   display: grid;
   gap: 1rem;

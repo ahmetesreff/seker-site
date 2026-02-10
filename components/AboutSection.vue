@@ -58,6 +58,18 @@ const props = withDefaults(
       </div>
     </div>
 
+    <div v-if="!props.compact" class="about-cta">
+      <div class="contact-card contact-highlight">
+        <h3>Hızlı teklif</h3>
+        <p>
+          Projenizi kısaca anlatın, uygun malzeme ve fiyatlandırmayı birlikte planlayalım.
+        </p>
+        <a href="mailto:info@sekermermer.com" class="btn btn-primary">
+          Teklif iste
+        </a>
+      </div>
+    </div>
+
     <div v-if="props.compact" class="section-more">
       <NuxtLink to="/hakkimizda">Devamını gör &rarr;</NuxtLink>
     </div>
