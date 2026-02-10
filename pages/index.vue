@@ -276,6 +276,21 @@ const products = [
             Teklif iste
           </a>
         </div>
+        <div class="contact-card map-card">
+          <h3>Harita</h3>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5763.748171387792!2d39.751754877662904!3d40.997586871352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643c6a77a2615d%3A0x20662aa8b69aff!2s%C5%9Eeker%20Mermer!5e1!3m2!1str!2str!4v1770710156484!5m2!1str!2str"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Şeker Mermer harita"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   </div>
