@@ -71,7 +71,7 @@ onUnmounted(() => { if (timer) clearInterval(timer); });
       </p>
       <div class="hero-actions">
         <NuxtLink to="/iletisim" class="btn btn-primary">Teklif al</NuxtLink>
-        <NuxtLink to="/galeri" class="btn btn-ghost">Galeriyi gör</NuxtLink>
+        <NuxtLink to="/uygulamalarimiz" class="btn btn-ghost">Uygulamalarımız</NuxtLink>
       </div>
 
       <div class="hero-stats">

@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
         <NuxtLink to="/hakkimizda" @click="closeMenu">Hakkımızda</NuxtLink>
         <NuxtLink to="/hizmetler" @click="closeMenu">Hizmetler</NuxtLink>
         <NuxtLink to="/urunler" @click="closeMenu">Ürünler</NuxtLink>
-        <NuxtLink to="/galeri" @click="closeMenu">Galeri</NuxtLink>
+        <NuxtLink to="/uygulamalarimiz" @click="closeMenu">Uygulamalarımız</NuxtLink>
         <NuxtLink to="/markalar" @click="closeMenu">Markalar</NuxtLink>
         <NuxtLink to="/iletisim" class="nav-cta" @click="closeMenu">İletişim</NuxtLink>
       </nav>

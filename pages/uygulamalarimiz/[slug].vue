@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
-const { fetchGalleryItem, strapiUrl } = useStrapi();
+const { fetchGalleryItemBySlug, strapiUrl } = useStrapi();
 
 const { data: item } = await useAsyncData(
-  `gallery-item-${route.params.id}`,
-  () => fetchGalleryItem(route.params.id as string)
+  `gallery-item-${route.params.slug}`,
+  () => fetchGalleryItemBySlug(route.params.slug as string)
 );
 
 if (!item.value) {
@@ -13,16 +13,28 @@ if (!item.value) {
 
 useHead({
   title: `${item.value.attributes.title} - Şeker Mermer`,
+  meta: [
+    {
+      name: "description",
+      content:
+        item.value.attributes.description ||
+        `${item.value.attributes.title} - Şeker Mermer mermer ve granit uygulama örneği.`,
+    },
+  ],
 });
 </script>
 
 <template>
   <div v-if="item" class="detail">
     <div class="detail-header">
-      <NuxtLink to="/galeri" class="back-pill">&larr; Geri</NuxtLink>
-      <span class="eyebrow">Galeri</span>
+      <NuxtLink to="/uygulamalarimiz" class="back-pill">&larr; Geri</NuxtLink>
+      <span class="eyebrow">Uygulamalarımız</span>
       <h1 class="detail-title">{{ item.attributes.title }}</h1>
     </div>
+
+    <p v-if="item.attributes.description" class="detail-description">
+      {{ item.attributes.description }}
+    </p>
 
     <div class="detail-cover">
       <img
@@ -36,7 +48,7 @@ useHead({
       <div class="video-frame">
         <iframe
           :src="item.attributes.videoUrl"
-          title="Galeri videosu"
+          title="Uygulama videosu"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         />

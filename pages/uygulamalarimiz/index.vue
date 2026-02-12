@@ -1,11 +1,11 @@
 <script setup lang="ts">
 useHead({
-  title: "Galeri | Şeker Mermer",
+  title: "Uygulamalarımız | Şeker Mermer",
   meta: [
     {
       name: "description",
       content:
-        "Şeker Mermer galeri: tamamlanan projeler, mermer ve granit uygulamalarına ait görsel çalışmalar.",
+        "Şeker Mermer uygulamaları: tamamlanan mermer, granit ve kuvars tezgah projeleri. Mutfak, banyo ve cephe uygulama örnekleri.",
     },
   ],
 });

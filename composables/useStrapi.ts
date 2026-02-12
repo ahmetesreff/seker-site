@@ -11,6 +11,7 @@ export interface GalleryItem {
   id: number;
   attributes: {
     title: string;
+    description: string | null;
     coverImage: { data: { attributes: StrapiImage } };
     images: { data: Array<{ attributes: StrapiImage }> };
     videoUrl: string | null;
@@ -70,10 +71,16 @@ export function useStrapi() {
     return res?.data ?? null;
   }
 
+  async function fetchGalleryItemBySlug(slug: string): Promise<GalleryItem | null> {
+    const items = await fetchGalleryItems();
+    return items.find((item) => slugify(item.attributes.title) === slug) ?? null;
+  }
+
   return {
     baseURL,
     strapiUrl,
     fetchGalleryItems,
     fetchGalleryItem,
+    fetchGalleryItemBySlug,
   };
 }

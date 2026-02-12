@@ -11,10 +11,22 @@ const strapiUrl = (process.env.STRAPI_URL || "http://localhost:1337").replace(/\
 
 const today = new Date().toISOString();
 
+const turkishMap = { ç:"c",Ç:"c",ğ:"g",Ğ:"g",ı:"i",İ:"i",ö:"o",Ö:"o",ş:"s",Ş:"s",ü:"u",Ü:"u" };
+function slugify(text) {
+  return text
+    .replace(/[çÇğĞıİöÖşŞüÜ]/g, (ch) => turkishMap[ch] || ch)
+    .toLowerCase().trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/[\s]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 async function fetchGalleryItems() {
   const url = new URL(`${strapiUrl}/api/gallery-items`);
   url.searchParams.set("pagination[pageSize]", "100");
   url.searchParams.set("fields[0]", "updatedAt");
+  url.searchParams.set("fields[1]", "title");
   url.searchParams.set("sort[0]", "updatedAt:desc");
 
   const res = await fetch(url.toString());
@@ -52,7 +64,7 @@ async function run() {
     "/hakkimizda",
     "/hizmetler",
     "/urunler",
-    "/galeri",
+    "/uygulamalarimiz",
     "/markalar",
     "/iletisim",
   ];
@@ -61,7 +73,7 @@ async function run() {
     ...staticRoutes.map((route) => buildUrlEntry(`${siteUrl}${route}`, today)),
     ...galleryItems.map((item) =>
       buildUrlEntry(
-        `${siteUrl}/galeri/${item.id}`,
+        `${siteUrl}/uygulamalarimiz/${slugify(item?.attributes?.title || String(item.id))}`,
         item?.attributes?.updatedAt || today
       )
     ),

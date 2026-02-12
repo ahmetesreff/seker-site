@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { slugify } from "~/composables/useSlug";
+
 const props = withDefaults(
   defineProps<{
     titleTag?: "h1" | "h2";
@@ -19,9 +21,9 @@ const safeItems = computed(() => {
   <section class="section">
     <div class="section-head">
       <div>
-        <component :is="props.titleTag" class="section-title">Galeri</component>
+        <component :is="props.titleTag" class="section-title">Uygulamalarımız</component>
         <p class="section-subtitle">
-          Seçili işler ve referanslar. Her galeri, kendi detay sayfasında tüm görselleriyle
+          Seçili işler ve referanslar. Her uygulama, kendi detay sayfasında tüm görselleriyle
           yer alır.
         </p>
       </div>
@@ -32,7 +34,7 @@ const safeItems = computed(() => {
       <NuxtLink
         v-for="(item, index) in safeItems"
         :key="item.id"
-        :to="`/galeri/${item.id}`"
+        :to="`/uygulamalarimiz/${slugify(item.attributes.title)}`"
         class="gallery-card"
         :style="{ '--i': index }"
       >
@@ -46,7 +48,7 @@ const safeItems = computed(() => {
         </div>
         <div class="gallery-body">
           <h3 class="gallery-title">{{ item.attributes.title }}</h3>
-          <span class="gallery-cta">Galeriyi gör &rarr;</span>
+          <span class="gallery-cta">Detayları gör &rarr;</span>
         </div>
       </NuxtLink>
     </div>
@@ -56,7 +58,7 @@ const safeItems = computed(() => {
     </div>
 
     <div v-if="props.compact" class="section-more">
-      <NuxtLink to="/galeri">Tüm galeri &rarr;</NuxtLink>
+      <NuxtLink to="/uygulamalarimiz">Tüm uygulamalar &rarr;</NuxtLink>
     </div>
   </section>
 </template>

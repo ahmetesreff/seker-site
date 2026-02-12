@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devbar.com/sitemap.xml
+Sitemap: https://sekermermer.com.tr/sitemap.xml
