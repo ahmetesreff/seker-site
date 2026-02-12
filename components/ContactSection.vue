@@ -23,8 +23,8 @@ const props = withDefaults(
       <div class="contact-info">
         <div class="contact-card">
           <h3>Adres</h3>
-          <p>Demirkırlar İş Merkezi No:64</p>
-          <p>Değirmendere, Trabzon / TÜRKİYE</p>
+          <p>Sanayi Mah. Dost Sk. No:41</p>
+          <p>Değirmendere, Ortahisar / Trabzon</p>
           <a href="https://www.sekermermer.com" class="contact-link">www.sekermermer.com</a>
         </div>
         <div class="contact-card">
@@ -32,10 +32,6 @@ const props = withDefaults(
           <p>
             Telefon:
             <a href="tel:+904623253601">+90 462 325 36 01</a>
-          </p>
-          <p>
-            Faks:
-            <a href="tel:+904623281215">+90 462 328 12 15</a>
           </p>
           <p>
             E-posta:

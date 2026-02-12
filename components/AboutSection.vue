@@ -23,7 +23,7 @@ const props = withDefaults(
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Firmamız Aydın Yılmaz tarafından mermer ve granit imalatı üzerine 1993 yılında
+          Firmamız mermer ve granit imalatı üzerine 1993 yılında
           Trabzon'da kurulmuştur. Kuruluş tarihinden itibaren üretim kapasitesini artırarak
           bölgedeki kurumsal ve profesyonel projelere hizmet sunmaktayız.
         </p>
