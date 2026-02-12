@@ -1042,6 +1042,23 @@ img {
 
   .menu-toggle {
     display: inline-flex;
+    height: 38px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    transition: height 0.25s ease, padding 0.25s ease;
+  }
+
+  .site-header.is-compact .menu-toggle {
+    height: 30px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .site-header.is-compact .menu-toggle-bar {
+    width: 16px;
+  }
+
+  .site-header.is-compact .menu-toggle-label {
+    font-size: 0.68rem;
   }
 
   .site-nav {
