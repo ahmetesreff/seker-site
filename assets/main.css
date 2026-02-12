@@ -88,44 +88,20 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 7vw;
+  padding: 1rem 7vw;
   position: sticky;
   top: 0;
   z-index: 10;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background: linear-gradient(to bottom, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.2));
-  min-height: var(--header-height);
-  transition: padding 0.3s ease, min-height 0.3s ease, box-shadow 0.3s ease;
+  min-height: var(--header-height-compact);
+  transition: box-shadow 0.3s ease;
   transform: translateZ(0);
-  will-change: transform;
 }
 
 .site-header.is-compact {
-  padding: 0.6rem 7vw;
-  min-height: var(--header-height-compact);
   box-shadow: 0 4px 20px rgba(28, 32, 29, 0.1);
-}
-
-.site-header.is-compact .brand-logo {
-  width: 36px;
-  height: 36px;
-}
-
-.site-header.is-compact .brand-text {
-  font-size: 0.95rem;
-}
-
-.site-header.is-compact .brand-subtext {
-  font-size: 0.7rem;
-}
-
-.site-header.is-compact .site-nav {
-  font-size: 0.84rem;
-}
-
-.site-header.is-compact .site-nav a {
-  padding: 0.35rem 0.75rem;
 }
 
 .brand {
@@ -138,15 +114,14 @@ img {
 }
 
 .brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
   background: #fff;
   border: 1px solid var(--border);
   padding: 6px;
   object-fit: contain;
   box-shadow: var(--shadow-soft);
-  transition: width 0.3s ease, height 0.3s ease;
 }
 
 
@@ -157,35 +132,32 @@ img {
 }
 
 .brand-text {
-  font-size: 1rem;
-  transition: font-size 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .brand-subtext {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
   letter-spacing: 0.18em;
-  transition: font-size 0.3s ease;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  transition: font-size 0.3s ease;
 }
 
 .site-nav a {
-  padding: 0.45rem 0.9rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
   border: 1px solid transparent;
   text-align: center;
   min-width: 110px;
-  transition: color 0.2s ease, background 0.2s ease, padding 0.3s ease;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .site-nav a:hover {
@@ -1043,35 +1015,11 @@ img {
   }
 
   .site-header.is-compact {
-    padding: 0.9rem 7vw 0.4rem;
-    min-height: var(--header-height-compact);
     box-shadow: 0 8px 24px rgba(28, 32, 29, 0.12);
   }
 
-  .site-header.is-compact .brand-logo {
-    width: 36px;
-    height: 36px;
-  }
-
-  .site-header.is-compact .brand-text {
-    font-size: 0.95rem;
-  }
-
-  .site-header.is-compact .brand-subtext {
-    letter-spacing: 0.14em;
-    font-size: 0.7rem;
-  }
-
-  .site-header.is-compact .menu-toggle {
-    height: 38px;
-  }
-
   .site-main {
-    padding-top: calc(1.5rem + var(--header-height));
-  }
-
-  .site-header.is-compact + .site-main {
-    padding-top: calc(1.2rem + var(--header-height-compact));
+    padding-top: calc(1rem + var(--header-height-compact));
   }
 
   .menu-toggle {
