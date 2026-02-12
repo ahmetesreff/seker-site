@@ -19,7 +19,8 @@ let ticking = false;
 const onScroll = () => {
   if (!ticking) {
     requestAnimationFrame(() => {
-      isCompact.value = window.scrollY > 20;
+      const y = window.scrollY;
+      isCompact.value = isCompact.value ? y > 10 : y > 30;
       ticking = false;
     });
     ticking = true;

@@ -96,7 +96,7 @@ img {
   -webkit-backdrop-filter: blur(12px);
   background: linear-gradient(to bottom, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.2));
   min-height: var(--header-height-compact);
-  transition: padding 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
   transform: translateZ(0);
 }
 
@@ -112,6 +112,12 @@ img {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.site-header.is-compact .brand {
+  transform: scale(0.85);
 }
 
 .brand-logo {
@@ -123,12 +129,6 @@ img {
   padding: 6px;
   object-fit: contain;
   box-shadow: var(--shadow-soft);
-  transition: width 0.25s ease, height 0.25s ease;
-}
-
-.site-header.is-compact .brand-logo {
-  width: 32px;
-  height: 32px;
 }
 
 
@@ -140,22 +140,12 @@ img {
 
 .brand-text {
   font-size: 0.95rem;
-  transition: font-size 0.25s ease;
-}
-
-.site-header.is-compact .brand-text {
-  font-size: 0.85rem;
 }
 
 .brand-subtext {
   font-size: 0.72rem;
   color: var(--muted);
   letter-spacing: 0.18em;
-  transition: font-size 0.25s ease;
-}
-
-.site-header.is-compact .brand-subtext {
-  font-size: 0.62rem;
 }
 
 .site-nav {
@@ -1030,7 +1020,7 @@ img {
     position: sticky;
     top: 0;
     padding: 0.8rem 5vw;
-    transition: padding 0.25s ease, box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease;
   }
 
   .site-header.is-compact {
@@ -1041,30 +1031,14 @@ img {
   .site-header .brand-logo {
     width: 38px;
     height: 38px;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-
-  .site-header.is-compact .brand-logo {
-    width: 30px;
-    height: 30px;
   }
 
   .site-header .brand-text {
     font-size: 0.88rem;
-    transition: font-size 0.25s ease;
-  }
-
-  .site-header.is-compact .brand-text {
-    font-size: 0.75rem;
   }
 
   .site-header .brand-subtext {
     font-size: 0.65rem;
-    transition: font-size 0.25s ease;
-  }
-
-  .site-header.is-compact .brand-subtext {
-    font-size: 0.55rem;
   }
 
   .menu-toggle {
@@ -1072,20 +1046,12 @@ img {
     height: 38px;
     padding: 0.3rem 0.6rem;
     border-radius: 10px;
-    transition: height 0.25s ease, padding 0.25s ease;
+    transform-origin: right center;
+    transition: transform 0.25s ease;
   }
 
   .site-header.is-compact .menu-toggle {
-    height: 30px;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .site-header.is-compact .menu-toggle-bar {
-    width: 16px;
-  }
-
-  .site-header.is-compact .menu-toggle-label {
-    font-size: 0.68rem;
+    transform: scale(0.82);
   }
 
   .site-nav {
