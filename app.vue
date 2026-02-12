@@ -26,13 +26,22 @@ const onScroll = () => {
   }
 };
 
+const onClickOutside = (e: MouseEvent) => {
+  const header = document.querySelector(".site-header");
+  if (isMenuOpen.value && header && !header.contains(e.target as Node)) {
+    closeMenu();
+  }
+};
+
 onMounted(() => {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  document.addEventListener("click", onClickOutside);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", onScroll);
+  document.removeEventListener("click", onClickOutside);
 });
 </script>
 
