@@ -713,9 +713,26 @@ img {
   font-weight: 600;
 }
 
+.product-category {
+  margin-bottom: 2.5rem;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+.category-soon {
+  color: var(--muted);
+  font-style: italic;
+}
+
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.4rem;
 }
 

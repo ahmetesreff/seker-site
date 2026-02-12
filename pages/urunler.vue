@@ -5,7 +5,7 @@ useHead({
     {
       name: "description",
       content:
-        "Şeker Mermer granit koleksiyonu ve doğal taş ürünleri. Seçili granit desenleri ve uygulama örnekleri.",
+        "Şeker Mermer ürün koleksiyonu: mermer, granit, quartz, porselen ve evye seçenekleri. Trabzon'da doğal taş ürünleri.",
     },
   ],
 });

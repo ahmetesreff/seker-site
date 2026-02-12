@@ -8,12 +8,13 @@ const props = withDefaults(
 );
 
 const services = [
-  { title: "Mermer ve granit imalatı", desc: "Kesim, şekillendirme ve montaj süreçleri." },
-  { title: "Kuvars yüzey uygulamaları", desc: "Mutfak, banyo ve iç mekan çözümleri." },
-  { title: "Mutfak tezgahları", desc: "Ölçüye özel üretim ve uygulama." },
-  { title: "Banyo ve zemin kaplamaları", desc: "Dayanıklı, uzun ömürlü kaplama işleri." },
-  { title: "Mermer pano ve şömine", desc: "Dekoratif ve kurumsal alan uygulamaları." },
-  { title: "Mezarlık ve özel işler", desc: "Geleneksel ve modern tasarımlar." },
+  { title: "Mutfak tezgahı ve alın kaplama", desc: "Ölçüye özel mutfak tezgahı üretimi, kesim ve montaj. Alın kaplama dahil anahtar teslim çözüm." },
+  { title: "Banyo tezgahı", desc: "Mermer, granit ve kuvars banyo tezgahları. Lavabo açılımı ve kenar profili dahil." },
+  { title: "Merdiven basamakları", desc: "İç ve dış mekan merdiven basamak, rıht ve süpürgelik uygulamaları." },
+  { title: "Pencere ve balkon parapetleri", desc: "Doğal taş pencere denizlikleri ve balkon parapetleri." },
+  { title: "Şömine kaplama", desc: "Mermer ve doğal taş şömine kaplama ve dekoratif işler." },
+  { title: "Mezar ve özel işler", desc: "Mezar yapımı, anıt ve özel tasarım doğal taş projeleri." },
+  { title: "Havuz uygulamaları", desc: "Havuz çevresi ve iç kaplama doğal taş uygulamaları." },
 ];
 
 const visibleServices = computed(() =>

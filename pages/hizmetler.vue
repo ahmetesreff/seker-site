@@ -5,7 +5,7 @@ useHead({
     {
       name: "description",
       content:
-        "Mermer, granit ve kuvars uygulamalarında üretim, montaj ve özel projeler için Şeker Mermer hizmetleri.",
+        "Şeker Mermer hizmetleri: mutfak tezgahı, banyo tezgahı, merdiven, şömine kaplama, havuz ve mezar uygulamaları. Trabzon'da doğal taş üretim ve montaj.",
     },
   ],
 });
