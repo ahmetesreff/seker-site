@@ -97,7 +97,7 @@ img {
   background: linear-gradient(to bottom, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.2));
   min-height: var(--header-height-compact);
   transition: box-shadow 0.25s ease;
-  transform: translateZ(0);
+  will-change: transform;
 }
 
 .site-header.is-compact {
