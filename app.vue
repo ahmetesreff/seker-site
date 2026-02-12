@@ -93,8 +93,8 @@ onBeforeUnmount(() => {
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 Şeker Mermer</span>
-      <span>Mermer ve granit uygulamaları.</span>
+      <span>© 2026 Şeker Mermer. Tüm hakları saklıdır.</span>
+      <span>Trabzon Mermer &amp; Granit Uygulamaları</span>
     </footer>
   </div>
 </template>
