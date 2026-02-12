@@ -7,6 +7,11 @@ const { data: item } = await useAsyncData(
   () => fetchGalleryItemBySlug(route.params.slug as string)
 );
 
+const embedUrl = (url: string) => {
+  const m = url.match(/(?:youtu\.be\/|[?&]v=)([\w-]+)/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : url;
+};
+
 if (!item.value) {
   throw createError({ statusCode: 404, message: "İçerik bulunamadı" });
 }
@@ -47,7 +52,7 @@ useHead({
       <h2>Video</h2>
       <div class="video-frame">
         <iframe
-          :src="item.attributes.videoUrl"
+          :src="embedUrl(item.attributes.videoUrl)"
           title="Uygulama videosu"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
