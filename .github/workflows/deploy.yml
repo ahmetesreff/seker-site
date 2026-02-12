@@ -28,6 +28,7 @@ jobs:
         run: npm run generate
         env:
           STRAPI_URL: ${{ secrets.STRAPI_URL }}
+          NUXT_PUBLIC_STRAPI_URL: ${{ secrets.STRAPI_URL }}
           SITE_URL: ${{ secrets.SITE_URL }}
 
       - name: Setup SSH key

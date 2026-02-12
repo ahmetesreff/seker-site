@@ -15,6 +15,14 @@ const safeItems = computed(() => {
   const all = items.value ?? [];
   return props.compact ? all.slice(0, 3) : all;
 });
+
+function truncate(text: string | null, max = 100): string {
+  if (!text) return "";
+  if (text.length <= max) return text;
+  const trimmed = text.slice(0, max);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  return (lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed) + "...";
+}
 </script>
 
 <template>
@@ -48,6 +56,9 @@ const safeItems = computed(() => {
         </div>
         <div class="gallery-body">
           <h3 class="gallery-title">{{ item.attributes.title }}</h3>
+          <p v-if="item.attributes.description" class="gallery-excerpt">
+            {{ truncate(item.attributes.description) }}
+          </p>
           <span class="gallery-cta">Detayları gör &rarr;</span>
         </div>
       </NuxtLink>
