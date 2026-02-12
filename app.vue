@@ -95,6 +95,7 @@ onBeforeUnmount(() => {
     <footer class="site-footer">
       <span>© 2026 Şeker Mermer. Tüm hakları saklıdır.</span>
       <span>Trabzon Mermer &amp; Granit Uygulamaları</span>
+      <span>Web Tasarım: <a href="https://ahmetesrefkarabulut.com.tr" target="_blank" rel="noopener">Ahmet Eşref Karabulut</a></span>
     </footer>
   </div>
 </template>
