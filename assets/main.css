@@ -1034,10 +1034,20 @@ img {
 
   .site-header .brand-text {
     font-size: 0.88rem;
+    transition: font-size 0.25s ease;
+  }
+
+  .site-header.is-compact .brand-text {
+    font-size: 0.75rem;
   }
 
   .site-header .brand-subtext {
     font-size: 0.65rem;
+    transition: font-size 0.25s ease;
+  }
+
+  .site-header.is-compact .brand-subtext {
+    font-size: 0.55rem;
   }
 
   .menu-toggle {
