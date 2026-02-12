@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
 const publicDir = resolve(rootDir, "public");
 
-const siteUrl = (process.env.SITE_URL || "https://devbar.com").replace(/\/$/, "");
+const siteUrl = (process.env.SITE_URL || "https://sekermermer.com.tr").replace(/\/$/, "");
 const strapiUrl = (process.env.STRAPI_URL || "http://localhost:1337").replace(/\/$/, "");
 
 const today = new Date().toISOString();
