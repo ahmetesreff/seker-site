@@ -49,7 +49,7 @@ const props = withDefaults(
         </div>
         <a
           class="btn btn-whatsapp"
-          href="https://wa.me/905357254748"
+          href="https://wa.me/905334135421"
           target="_blank"
           rel="noreferrer"
         >
