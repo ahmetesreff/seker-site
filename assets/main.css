@@ -803,7 +803,7 @@ img {
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -826,6 +826,7 @@ img {
   height: 70px;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 .brand-logo-wrap img {
@@ -1149,6 +1150,10 @@ img {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery-filters {
