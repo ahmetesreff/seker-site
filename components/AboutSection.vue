@@ -21,34 +21,36 @@ const props = withDefaults(
     </div>
 
     <div class="about-grid">
-      <div class="about-text">
-        <p>
-          Firmamız mermer ve granit imalatı üzerine 1993 yılında
-          Trabzon'da kurulmuştur. Kuruluş tarihinden itibaren üretim kapasitesini artırarak
-          bölgedeki kurumsal ve profesyonel projelere hizmet sunmaktayız.
-        </p>
-        <template v-if="!props.compact">
+      <div class="about-left">
+        <div class="about-text">
           <p>
-            Deneyimli kadromuzla iş merkezleri, yapı ve sanayi inşaatları, daireler, mutfak
-            tezgahları, mezarlık, şömine ve mermer pano uygulamalarında üretim ve montaj
-            süreçlerini yönetiyoruz.
+            Firmamız mermer ve granit imalatı üzerine 1993 yılında
+            Trabzon'da kurulmuştur. Kuruluş tarihinden itibaren üretim kapasitesini artırarak
+            bölgedeki kurumsal ve profesyonel projelere hizmet sunmaktayız.
           </p>
-          <p>
-            Hedefimiz; kaliteli hizmet vererek müşteri memnuniyetini sürekli geliştirmek ve
-            mermer granit sektöründe bölgemizi markamızla birlikte daha iyi tanıtmaktır.
-          </p>
-        </template>
+          <template v-if="!props.compact">
+            <p>
+              Deneyimli kadromuzla iş merkezleri, yapı ve sanayi inşaatları, daireler, mutfak
+              tezgahları, mezarlık, şömine ve mermer pano uygulamalarında üretim ve montaj
+              süreçlerini yönetiyoruz.
+            </p>
+            <p>
+              Hedefimiz; kaliteli hizmet vererek müşteri memnuniyetini sürekli geliştirmek ve
+              mermer granit sektöründe bölgemizi markamızla birlikte daha iyi tanıtmaktır.
+            </p>
+          </template>
+        </div>
+        <div class="about-card">
+          <span class="card-title">Üretim ve montaj</span>
+          <span class="card-value">Mermer + Granit</span>
+          <span class="card-meta">Kurumsal projeler</span>
+        </div>
       </div>
       <div class="about-panel">
         <div class="about-card">
           <span class="card-title">Kurumsal deneyim</span>
           <span class="card-value">30+ yıl</span>
           <span class="card-meta">Trabzon merkezli</span>
-        </div>
-        <div class="about-card">
-          <span class="card-title">Üretim ve montaj</span>
-          <span class="card-value">Mermer + Granit</span>
-          <span class="card-meta">Kurumsal projeler</span>
         </div>
         <div class="about-card">
           <span class="card-title">Ekip ve lojistik</span>
