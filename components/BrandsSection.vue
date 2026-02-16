@@ -8,22 +8,16 @@ const props = withDefaults(
 );
 
 const brands = [
-  {
-    name: "Belenco",
-    logo: "/brands/belenco-logo.png",
-  },
-  {
-    name: "Çimstone",
-    logo: "/brands/cimstone-logo.png",
-  },
-  {
-    name: "Kromevye",
-    logo: "/brands/kromevye-logo.png",
-  },
-  {
-    name: "Orient",
-    logo: "/brands/orient-logo.png",
-  },
+  { name: "Belenco", logo: "/brands/belenco-logo.png" },
+  { name: "Çimstone", logo: "/brands/cimstone-logo.png" },
+  { name: "Coante", logo: "/brands/coante.png" },
+  { name: "Kromevye", logo: "/brands/kromevye-logo.png" },
+  { name: "Lamar", logo: "/brands/lamar.svg" },
+  { name: "Maestro", logo: "/brands/maestro.svg" },
+  { name: "NG Stone", logo: "/brands/ng-stone.png" },
+  { name: "Orient", logo: "/brands/orient-logo.png" },
+  { name: "Stonext", logo: "/brands/stonext.png" },
+  { name: "T-One", logo: "/brands/t-one.webp" },
 ];
 </script>
 
