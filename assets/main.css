@@ -822,7 +822,7 @@ img {
 }
 
 .brand-logo-wrap {
-  width: 100%;
+  width: 120px;
   height: 80px;
   display: grid;
   place-items: center;
