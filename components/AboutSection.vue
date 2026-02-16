@@ -9,7 +9,7 @@ const props = withDefaults(
 </script>
 
 <template>
-  <section class="section">
+  <section class="section about-section" :class="{ 'is-compact': props.compact }">
     <div class="section-head">
       <div>
         <component :is="props.titleTag" class="section-title">Hakkımızda</component>
