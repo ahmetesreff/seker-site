@@ -10,6 +10,7 @@ const props = withDefaults(
 const categories = [
   {
     name: "Mermer",
+    slug: "mermer",
     items: [
       { name: "Muğla Beyaz", image: "/products/mermer/mugla-beyaz.png" },
       { name: "Amasya Bej", image: "/products/mermer/amasya-bej.png" },
@@ -20,6 +21,7 @@ const categories = [
   },
   {
     name: "Granit",
+    slug: "granit",
     items: [
       { name: "Star Galaxy", image: "/products/granit/star-galaxy-granit.png" },
       { name: "Rosa Minho", image: "/products/granit/rosa-minho-granit.png" },
@@ -31,6 +33,7 @@ const categories = [
   },
   {
     name: "Quartz",
+    slug: "quartz",
     items: [
       { name: "Belenco", image: "/products/quartz/belenco-quartz.png" },
       { name: "Çimstone", image: "/products/quartz/cimstone-quartz.png" },
@@ -40,6 +43,7 @@ const categories = [
   },
   {
     name: "Porselen",
+    slug: "porselen",
     items: [
       { name: "Lamar", image: "/products/porselen/lamar-porselen.png" },
       { name: "NG Stone", image: "/products/porselen/ng-stone-porselen.png" },
@@ -49,6 +53,7 @@ const categories = [
   },
   {
     name: "Evyeler",
+    slug: null,
     items: [],
   },
 ];
@@ -70,8 +75,20 @@ const visibleCategories = computed(() =>
     </div>
 
     <div v-for="cat in visibleCategories" :key="cat.name" class="product-category">
-      <h2 v-if="props.titleTag === 'h1'" class="category-title">{{ cat.name }}</h2>
-      <h3 v-else class="category-title">{{ cat.name }}</h3>
+      <template v-if="props.titleTag === 'h1'">
+        <NuxtLink v-if="cat.slug" :to="`/uygulamalarimiz?tas=${cat.slug}`" class="category-title-link">
+          <h2 class="category-title">{{ cat.name }}</h2>
+          <span class="category-link-hint">uygulamaları gör &rarr;</span>
+        </NuxtLink>
+        <h2 v-else class="category-title">{{ cat.name }}</h2>
+      </template>
+      <template v-else>
+        <NuxtLink v-if="cat.slug" :to="`/uygulamalarimiz?tas=${cat.slug}`" class="category-title-link">
+          <h3 class="category-title">{{ cat.name }}</h3>
+          <span class="category-link-hint">uygulamaları gör &rarr;</span>
+        </NuxtLink>
+        <h3 v-else class="category-title">{{ cat.name }}</h3>
+      </template>
 
       <div v-if="cat.items.length" class="products-grid">
         <article v-for="product in cat.items" :key="product.name" class="product-card">

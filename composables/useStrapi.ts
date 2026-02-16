@@ -16,6 +16,8 @@ export interface GalleryItem {
     images: { data: Array<{ attributes: StrapiImage }> };
     videoUrl: string | null;
     order: number;
+    stoneType: string | null;
+    serviceType: string | null;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;

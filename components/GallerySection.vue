@@ -6,15 +6,30 @@ const props = withDefaults(
     titleTag?: "h1" | "h2";
     showCount?: boolean;
     compact?: boolean;
+    filterStone?: string | null;
+    filterService?: string | null;
   }>(),
-  { titleTag: "h2", showCount: true, compact: false }
+  { titleTag: "h2", showCount: true, compact: false, filterStone: null, filterService: null }
 );
 
 const { items, itemCount, strapiUrl } = useGalleryItemsData();
-const safeItems = computed(() => {
-  const all = items.value ?? [];
-  return props.compact ? all.slice(0, 3) : all;
+
+const filteredItems = computed(() => {
+  let all = items.value ?? [];
+  if (props.filterStone) {
+    all = all.filter((item) => item.attributes.stoneType === props.filterStone);
+  }
+  if (props.filterService) {
+    all = all.filter((item) => item.attributes.serviceType === props.filterService);
+  }
+  return all;
 });
+
+const safeItems = computed(() => {
+  return props.compact ? filteredItems.value.slice(0, 3) : filteredItems.value;
+});
+
+const isFiltered = computed(() => props.filterStone || props.filterService);
 
 function truncate(text: string | null, max = 100): string {
   if (!text) return "";
@@ -35,8 +50,12 @@ function truncate(text: string | null, max = 100): string {
           yer alır.
         </p>
       </div>
-      <span v-if="props.showCount && !props.compact" class="hero-meta">{{ itemCount }} toplam</span>
+      <span v-if="props.showCount && !props.compact" class="hero-meta">
+        <template v-if="isFiltered">{{ filteredItems.length }} / </template>{{ itemCount }} toplam
+      </span>
     </div>
+
+    <slot name="filters" />
 
     <div class="gallery-grid">
       <NuxtLink
@@ -64,7 +83,11 @@ function truncate(text: string | null, max = 100): string {
       </NuxtLink>
     </div>
 
-    <div v-if="!safeItems.length" class="empty-state">
+    <div v-if="isFiltered && !filteredItems.length" class="empty-state">
+      Bu filtreye uygun uygulama bulunamadı.
+    </div>
+
+    <div v-else-if="!safeItems.length" class="empty-state">
       Henüz içerik yok. Strapi üzerinden yeni galeri ekleyebilirsiniz.
     </div>
 

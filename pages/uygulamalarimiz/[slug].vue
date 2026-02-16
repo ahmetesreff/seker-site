@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { stoneLabel, serviceLabel } from "~/composables/useGalleryFilters";
+
 const route = useRoute();
 const { fetchGalleryItemBySlug, strapiUrl } = useStrapi();
 
@@ -35,6 +37,22 @@ useHead({
       <NuxtLink to="/uygulamalarimiz" class="back-pill">&larr; Geri</NuxtLink>
       <span class="eyebrow">Uygulamalarımız</span>
       <h1 class="detail-title">{{ item.attributes.title }}</h1>
+      <div v-if="item.attributes.stoneType || item.attributes.serviceType" class="detail-tags">
+        <NuxtLink
+          v-if="item.attributes.stoneType"
+          :to="`/uygulamalarimiz?tas=${item.attributes.stoneType}`"
+          class="detail-tag"
+        >
+          {{ stoneLabel(item.attributes.stoneType) }}
+        </NuxtLink>
+        <NuxtLink
+          v-if="item.attributes.serviceType"
+          :to="`/uygulamalarimiz?hizmet=${item.attributes.serviceType}`"
+          class="detail-tag"
+        >
+          {{ serviceLabel(item.attributes.serviceType) }}
+        </NuxtLink>
+      </div>
     </div>
 
     <p v-if="item.attributes.description" class="detail-description">

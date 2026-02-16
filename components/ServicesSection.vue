@@ -8,13 +8,13 @@ const props = withDefaults(
 );
 
 const services = [
-  { title: "Mutfak tezgahı ve alın kaplama", desc: "Ölçüye özel mutfak tezgahı üretimi, kesim ve montaj. Alın kaplama dahil anahtar teslim çözüm." },
-  { title: "Banyo tezgahı", desc: "Mermer, granit ve kuvars banyo tezgahları. Lavabo açılımı ve kenar profili dahil." },
-  { title: "Merdiven basamakları", desc: "İç ve dış mekan merdiven basamak, rıht ve süpürgelik uygulamaları." },
-  { title: "Pencere ve balkon parapetleri", desc: "Doğal taş pencere denizlikleri ve balkon parapetleri." },
-  { title: "Şömine kaplama", desc: "Mermer ve doğal taş şömine kaplama ve dekoratif işler." },
-  { title: "Mezar ve özel işler", desc: "Mezar yapımı, anıt ve özel tasarım doğal taş projeleri." },
-  { title: "Havuz uygulamaları", desc: "Havuz çevresi ve iç kaplama doğal taş uygulamaları." },
+  { title: "Mutfak tezgahı ve alın kaplama", slug: "mutfak-tezgahi", desc: "Ölçüye özel mutfak tezgahı üretimi, kesim ve montaj. Alın kaplama dahil anahtar teslim çözüm." },
+  { title: "Banyo tezgahı", slug: "banyo-tezgahi", desc: "Mermer, granit ve kuvars banyo tezgahları. Lavabo açılımı ve kenar profili dahil." },
+  { title: "Merdiven basamakları", slug: "merdiven", desc: "İç ve dış mekan merdiven basamak, rıht ve süpürgelik uygulamaları." },
+  { title: "Pencere ve balkon parapetleri", slug: "pencere-balkon", desc: "Doğal taş pencere denizlikleri ve balkon parapetleri." },
+  { title: "Şömine kaplama", slug: "somine", desc: "Mermer ve doğal taş şömine kaplama ve dekoratif işler." },
+  { title: "Mezar ve özel işler", slug: "mezar-ozel", desc: "Mezar yapımı, anıt ve özel tasarım doğal taş projeleri." },
+  { title: "Havuz uygulamaları", slug: "havuz", desc: "Havuz çevresi ve iç kaplama doğal taş uygulamaları." },
 ];
 
 const visibleServices = computed(() =>
@@ -35,10 +35,16 @@ const visibleServices = computed(() =>
     </div>
 
     <div class="services-grid">
-      <div v-for="service in visibleServices" :key="service.title" class="service-card">
+      <NuxtLink
+        v-for="service in visibleServices"
+        :key="service.title"
+        :to="`/uygulamalarimiz?hizmet=${service.slug}`"
+        class="service-card service-card--link"
+      >
         <h3>{{ service.title }}</h3>
         <p>{{ service.desc }}</p>
-      </div>
+        <span class="service-cta">Uygulamaları gör &rarr;</span>
+      </NuxtLink>
     </div>
 
     <div v-if="props.compact" class="section-more">
