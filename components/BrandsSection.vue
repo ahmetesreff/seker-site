@@ -19,6 +19,10 @@ const brands = [
   { name: "Stonext", logo: "/brands/stonext.png" },
   { name: "T-One", logo: "/brands/t-one.webp" },
 ];
+
+const visibleBrands = computed(() =>
+  props.compact ? brands.slice(0, 6) : brands
+);
 </script>
 
 <template>
@@ -31,7 +35,7 @@ const brands = [
     </div>
 
     <div class="brands-grid">
-      <div v-for="brand in brands" :key="brand.name" class="brand-card">
+      <div v-for="brand in visibleBrands" :key="brand.name" class="brand-card">
         <div class="brand-logo-wrap" :class="brand.logoWrapClass">
           <img :src="brand.logo" :alt="brand.name" loading="lazy" />
         </div>
