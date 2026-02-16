@@ -1255,13 +1255,7 @@ img {
   font-size: 0.8rem;
   color: var(--accent-strong);
   font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.2s ease;
   white-space: nowrap;
-}
-
-.category-title-link:hover .category-link-hint {
-  opacity: 1;
 }
 
 /* Service Card Link */
