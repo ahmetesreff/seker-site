@@ -12,7 +12,7 @@ const brands = [
   { name: "Çimstone", logo: "/brands/cimstone-logo.png" },
   { name: "Coante", logo: "/brands/coante.png" },
   { name: "Kromevye", logo: "/brands/kromevye-logo.png" },
-  { name: "Lamar", logo: "/brands/lamar.svg", logoWrapClass: "brand-logo-wrap--portrait" },
+  { name: "Lamar", logo: "/brands/lamar.svg", logoWrapClass: "is-lamar" },
   { name: "Maestro", logo: "/brands/maestro.svg" },
   { name: "NG Stone", logo: "/brands/ng-stone.png" },
   { name: "Orient", logo: "/brands/orient-logo.png" },
