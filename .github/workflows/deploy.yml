@@ -42,7 +42,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
             ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
-            "sudo chown -R ${{ secrets.DEPLOY_USER }}:${{ secrets.DEPLOY_USER }} ${{ secrets.DEPLOY_PATH }}/"
+            "sudo /usr/bin/chown -R deploy:deploy /var/www/seker-site/"
 
       - name: Deploy via rsync
         run: |
