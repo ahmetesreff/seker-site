@@ -830,6 +830,11 @@ img {
   place-items: center;
 }
 
+.brand-logo-wrap--portrait {
+  width: min(90px, 75%);
+  aspect-ratio: 2 / 3;
+}
+
 .brand-logo-wrap img {
   width: 100%;
   height: 100%;

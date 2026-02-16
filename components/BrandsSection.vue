@@ -12,7 +12,7 @@ const brands = [
   { name: "Çimstone", logo: "/brands/cimstone-logo.png" },
   { name: "Coante", logo: "/brands/coante.png" },
   { name: "Kromevye", logo: "/brands/kromevye-logo.png" },
-  { name: "Lamar", logo: "/brands/lamar.svg" },
+  { name: "Lamar", logo: "/brands/lamar.svg", logoWrapClass: "brand-logo-wrap--portrait" },
   { name: "Maestro", logo: "/brands/maestro.svg" },
   { name: "NG Stone", logo: "/brands/ng-stone.png" },
   { name: "Orient", logo: "/brands/orient-logo.png" },
@@ -32,7 +32,7 @@ const brands = [
 
     <div class="brands-grid">
       <div v-for="brand in brands" :key="brand.name" class="brand-card">
-        <div class="brand-logo-wrap">
+        <div class="brand-logo-wrap" :class="brand.logoWrapClass">
           <img :src="brand.logo" :alt="brand.name" loading="lazy" />
         </div>
         <span class="brand-name">{{ brand.name }}</span>
