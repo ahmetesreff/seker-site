@@ -117,13 +117,12 @@ onUnmounted(() => { if (timer) clearInterval(timer); });
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
 
-        <div class="hero-dots">
-          <button
+        <div class="hero-dots" aria-hidden="true">
+          <span
             v-for="(_, i) in sliderImages"
             :key="i"
             class="hero-dot"
             :class="{ active: i === activeIndex }"
-            @click="activeIndex = i; resetTimer()"
           />
         </div>
       </template>
