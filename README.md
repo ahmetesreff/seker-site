@@ -16,13 +16,18 @@
 site/
   index.html        tüm içerik (taşlar, uygulamalar, hizmetler, markalar, hakkımızda, iletişim)
   site.css          renk ve yazı tipi değişkenleri en üstte
-  img/tas/          taş görselleri, 520×520 webp
-  img/uygulama/     uygulama fotoğrafları, 1200×900 webp
+  img/tas/          taş görselleri, 400×400 webp
+  img/uygulama/     uygulama fotoğrafları, 1200×900 ve 800×600 (srcset) webp
   img/marka/        marka logoları
   img/og.jpg        paylaşım önizlemesi (1200×630)
+  fonts/            Barlow ve Barlow Condensed (OFL), yerelde sunulur: Google'a istek gitmez
 ```
 
 Taş ya da marka eklemek için `index.html`'de ilgili listeye bir `<li>` eklemek yeterli. Sekmelerdeki ve başlıklardaki sayılar listeden kendiliğinden hesaplanır.
+
+## Kontrol
+
+Yayın öncesi Lighthouse (yerelde `npx wrangler pages dev site`): telefon 98/100/100/100, masaüstü 100/100/100/100 (2026-11-08).
 
 ## İçerik kuralları
 

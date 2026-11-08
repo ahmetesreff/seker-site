@@ -41,16 +41,17 @@
   "areaServed": "Trabzon"
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="preload" href="/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-condensed-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <header class="ust">
   <div class="ic">
-    <a class="marka" href="#" aria-label="Şeker Mermer ana sayfa">
+    <a class="marka" href="#">
       <img src="img/logo.webp" width="138" height="110" alt="">
       <span><b>Şeker Mermer</b><small>Mermer ve granit imalatı</small></span>
     </a>
@@ -58,7 +59,7 @@
       <a href="#taslar">Taşlar</a><a href="#uygulamalar">Uygulamalar</a><a href="#hizmetler">Hizmetler</a>
       <a href="#markalar">Markalar</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a>
     </nav>
-    <button class="menu-dugme" aria-expanded="false" aria-controls="menu">Menü</button>
+    <button type="button" class="menu-dugme" aria-expanded="false" aria-controls="menu">Menü</button>
     <a class="btn btn-k" href="https://wa.me/905334135421" target="_blank" rel="noopener">Teklif al</a>
   </div>
 </header>
@@ -72,18 +73,19 @@
       <p class="aciklama">Mermer, granit, kuvars ve porselen tezgahınızı yerinde ölçer, atölyemizde keser, kendi ekibimizle takarız.</p>
       <div class="dugmeler">
         <a class="btn btn-k" href="https://wa.me/905334135421" target="_blank" rel="noopener">WhatsApp'tan teklif al</a>
-        <a class="btn btn-c" href="tel:+904623253601"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>0462 325 36 01</a>
+        <a class="btn btn-c" href="tel:+904623253601"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>0462&nbsp;325&nbsp;36&nbsp;01</a>
       </div>
     </div>
     <div class="giris-gorsel">
-      <img src="img/uygulama/3.webp" width="1200" height="900" fetchpriority="high" alt="Şeker Mermer uygulaması: siyah tezgahlı mutfak ve mutfak adası">
+      <img src="img/uygulama/3.webp" srcset="img/uygulama/3-800.webp 800w, img/uygulama/3.webp 1200w" sizes="(max-width: 860px) 100vw, 52vw" width="1200" height="900" fetchpriority="high" alt="Şeker Mermer uygulaması: siyah tezgahlı mutfak ve mutfak adası">
       <div class="olcu" aria-hidden="true"><span>Ölçüye özel kesim</span></div>
       <p class="etiket-alt">Uygulama · Mutfak tezgahı ve ada</p>
     </div>
   </div>
 </section>
 
-<section class="surec" aria-label="Çalışma şeklimiz">
+<section class="surec">
+  <h2 class="gizli">Çalışma şeklimiz</h2>
   <div class="ic">
     <div class="adim"><b>01</b><h3>Ölçü</h3><p>Yerinde ölçü alır, taşı birlikte seçeriz.</p></div>
     <div class="adim"><b>02</b><h3>Kesim</h3><p>Değirmendere'deki atölyemizde keser, kenarını işleriz.</p></div>
@@ -98,49 +100,49 @@
       <p>Mermer, granit, kuvars ve porselen. Hangisini seçerseniz ölçünüze göre keser, yerine takarız.</p>
     </div>
     <div class="sekme" role="group" aria-label="Taş türü">
-      <button aria-pressed="true" data-tur="hepsi">Tümü<sup></sup></button>
-      <button aria-pressed="false" data-tur="mermer">Mermer<sup></sup></button>
-      <button aria-pressed="false" data-tur="granit">Granit<sup></sup></button>
-      <button aria-pressed="false" data-tur="kuvars">Kuvars<sup></sup></button>
-      <button aria-pressed="false" data-tur="porselen">Porselen<sup></sup></button>
+      <button type="button" aria-pressed="true" data-tur="hepsi">Tümü<sup></sup></button>
+      <button type="button" aria-pressed="false" data-tur="mermer">Mermer<sup></sup></button>
+      <button type="button" aria-pressed="false" data-tur="granit">Granit<sup></sup></button>
+      <button type="button" aria-pressed="false" data-tur="kuvars">Kuvars<sup></sup></button>
+      <button type="button" aria-pressed="false" data-tur="porselen">Porselen<sup></sup></button>
     </div>
     <div class="tur" data-tur="mermer">
       <div class="tur-ad"><h3>Mermer</h3><span></span><p>Banyo, merdiven, şömine ve zemin.</p></div>
       <ul class="taslar">
-        <li><img src="img/tas/mugla-beyaz.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Muğla Beyaz</b></li>
-        <li><img src="img/tas/amasya-bej.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Amasya Bej</b></li>
-        <li><img src="img/tas/bursa-siyah.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Bursa Siyah</b></li>
-        <li><img src="img/tas/rustik-bej.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Rustik Bej</b></li>
-        <li><img src="img/tas/traverten.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Traverten</b></li>
+        <li><img src="img/tas/mugla-beyaz.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Muğla Beyaz</b></li>
+        <li><img src="img/tas/amasya-bej.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Amasya Bej</b></li>
+        <li><img src="img/tas/bursa-siyah.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Bursa Siyah</b></li>
+        <li><img src="img/tas/rustik-bej.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Rustik Bej</b></li>
+        <li><img src="img/tas/traverten.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Traverten</b></li>
       </ul>
     </div>
     <div class="tur" data-tur="granit">
       <div class="tur-ad"><h3>Granit</h3><span></span><p>Mutfak tezgahı, merdiven ve dış mekân.</p></div>
       <ul class="taslar">
-        <li><img src="img/tas/star-galaxy.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Star Galaxy</b></li>
-        <li><img src="img/tas/rosa-minho.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Rosa Minho</b></li>
-        <li><img src="img/tas/ankara-fume.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Ankara Füme</b></li>
-        <li><img src="img/tas/rosa-porrino.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Rosa Porrino</b></li>
-        <li><img src="img/tas/river-black.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>River Black</b></li>
-        <li><img src="img/tas/tan-brown.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Tan Brown</b></li>
+        <li><img src="img/tas/star-galaxy.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Star Galaxy</b></li>
+        <li><img src="img/tas/rosa-minho.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Rosa Minho</b></li>
+        <li><img src="img/tas/ankara-fume.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Ankara Füme</b></li>
+        <li><img src="img/tas/rosa-porrino.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Rosa Porrino</b></li>
+        <li><img src="img/tas/river-black.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>River Black</b></li>
+        <li><img src="img/tas/tan-brown.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Tan Brown</b></li>
       </ul>
     </div>
     <div class="tur" data-tur="kuvars">
       <div class="tur-ad"><h3>Kuvars</h3><span></span><p>Mutfak ve banyo tezgahı.</p></div>
       <ul class="taslar">
-        <li><img src="img/tas/belenco.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Belenco</b></li>
-        <li><img src="img/tas/cimstone.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Çimstone</b></li>
-        <li><img src="img/tas/maestro.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Maestro</b></li>
-        <li><img src="img/tas/coante.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Coante</b></li>
+        <li><img src="img/tas/belenco.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Belenco</b></li>
+        <li><img src="img/tas/cimstone.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Çimstone</b></li>
+        <li><img src="img/tas/maestro.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Maestro</b></li>
+        <li><img src="img/tas/coante.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Coante</b></li>
       </ul>
     </div>
     <div class="tur" data-tur="porselen">
       <div class="tur-ad"><h3>Porselen</h3><span></span><p>Tezgah ve duvar kaplama.</p></div>
       <ul class="taslar">
-        <li><img src="img/tas/lamar.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Lamar</b></li>
-        <li><img src="img/tas/ng-stone.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>NG Stone</b></li>
-        <li><img src="img/tas/t-one.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>T-One</b></li>
-        <li><img src="img/tas/stonext.webp" width="520" height="520" alt="" loading="lazy" decoding="async"><b>Stonext</b></li>
+        <li><img src="img/tas/lamar.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Lamar</b></li>
+        <li><img src="img/tas/ng-stone.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>NG Stone</b></li>
+        <li><img src="img/tas/t-one.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>T-One</b></li>
+        <li><img src="img/tas/stonext.webp" width="400" height="400" alt="" loading="lazy" decoding="async"><b>Stonext</b></li>
       </ul>
     </div>
   </div>
@@ -153,9 +155,9 @@
       <p>Ölçüsünü aldığımız, kestiğimiz ve taktığımız tezgahlardan.</p>
     </div>
     <div class="uyg">
-      <figure><img src="img/uygulama/1.webp" width="1200" height="900" alt="Gri dolaplı mutfakta beyaz tezgah ve mutfak adası" loading="lazy" decoding="async"><figcaption><i>01</i>Mutfak tezgahı ve ada</figcaption></figure>
-      <figure><img src="img/uygulama/2.webp" width="1200" height="900" alt="Beyaz damarlı tezgah ve alın kaplama, eviye açılımı" loading="lazy" decoding="async"><figcaption><i>02</i>Tezgah ve alın kaplama</figcaption></figure>
-      <figure><img src="img/uygulama/3.webp" width="1200" height="900" alt="Siyah tezgahlı mutfak ve mutfak adası" loading="lazy" decoding="async"><figcaption><i>03</i>Siyah tezgah ve ada</figcaption></figure>
+      <figure><img src="img/uygulama/1.webp" srcset="img/uygulama/1-800.webp 800w, img/uygulama/1.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw" width="1200" height="900" alt="Gri dolaplı mutfakta beyaz tezgah ve mutfak adası" loading="lazy" decoding="async"><figcaption><i>01</i>Mutfak tezgahı ve ada</figcaption></figure>
+      <figure><img src="img/uygulama/2.webp" srcset="img/uygulama/2-800.webp 800w, img/uygulama/2.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw" width="1200" height="900" alt="Beyaz damarlı tezgah ve alın kaplama, eviye açılımı" loading="lazy" decoding="async"><figcaption><i>02</i>Tezgah ve alın kaplama</figcaption></figure>
+      <figure><img src="img/uygulama/3.webp" srcset="img/uygulama/3-800.webp 800w, img/uygulama/3.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw" width="1200" height="900" alt="Siyah tezgahlı mutfak ve mutfak adası" loading="lazy" decoding="async"><figcaption><i>03</i>Siyah tezgah ve ada</figcaption></figure>
     </div>
   </div>
 </section>
@@ -221,8 +223,8 @@
       <div>
         <dl>
           <div><dt>Adres</dt><dd>Sanayi Mah. Dost Sk. No:41<br>Değirmendere, Ortahisar / Trabzon</dd></div>
-          <div><dt>Telefon</dt><dd><a href="tel:+904623253601">0462 325 36 01</a></dd></div>
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/905334135421" target="_blank" rel="noopener">0533 413 54 21</a></dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+904623253601">0462&nbsp;325&nbsp;36&nbsp;01</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/905334135421" target="_blank" rel="noopener">0533&nbsp;413&nbsp;54&nbsp;21</a></dd></div>
           <div><dt>E-posta</dt><dd><a href="mailto:info@sekermermer.com">info@sekermermer.com</a></dd></div>
         </dl>
         <div class="dugmeler">
