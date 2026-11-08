@@ -3,7 +3,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "seker-site",
   "compatibility_date": "2026-11-01",
-  // Yalnızca sekermermer.com.tr (panelde Custom Domain; www → apex panelde Redirect Rule ile).
+  // Alan adları burada değil, panelde/API'de Custom Domain: sekermermer.com.tr ve www.sekermermer.com.tr
+  // (2026-11-08'den beri ikisi de bu Worker'da, sunucuya bağ yok). www → apex yönlendirmesini Worker'dan
+  // önce çalışan Redirect Rule yapar. routes eklenmedikçe yayınlar bu bağlantılara dokunmaz.
   // workers.dev ve sürüm önizleme adresleri kapalı: sitenin ikinci kopyası olmasın (SEO) ve
   // her yayında yeniden açılmasın (panelden kapatmak yetmez, burada false olmalı).
   "workers_dev": false,
