@@ -1,0 +1,14 @@
+# Eski Nuxt sitesinin adresleri tek sayfadaki bölümlere yönlenir (Search Console ve eski bağlantılar için)
+/hakkimizda          /#hakkimizda   301
+/hakkimizda/*        /#hakkimizda   301
+/urunler             /#taslar       301
+/urunler/*           /#taslar       301
+/markalar            /#markalar     301
+/markalar/*          /#markalar     301
+/hizmetler           /#hizmetler    301
+/hizmetler/*         /#hizmetler    301
+/uygulamalarimiz     /#uygulamalar  301
+/uygulamalarimiz/*   /#uygulamalar  301
+/iletisim            /#iletisim     301
+/iletisim/*          /#iletisim     301
+/200.html            /              301
