@@ -1,5 +1,9 @@
 # SEO ve Domain Geçiş Planı — sekermermer.com
 
+> **GEÇERSİZ (2026-11-08):** `sekermermer.com` firmaya ait değil. Alan adını eskiden başka bir firma kullanıyordu, şimdi park edilmiş durumda ve e-posta kaydı yok. Bu yüzden sitede ne `.com` adresine ne de `info@sekermermer.com` adresine yer verilmiyor.
+> **Birincil ve tek alan adı `sekermermer.com.tr`.** Aşağıdaki `.com` geçiş adımları uygulanmayacak. SEO maddeleri yalnızca `.com.tr` için geçerli.
+
+
 > Bu plan `sekermermer.com` domain'i alındığında uygulanacaktır.
 > Tüm SEO düzeltmeleri ve domain birleştirme işlemleri bu dokümanda belgelenmiştir.
 

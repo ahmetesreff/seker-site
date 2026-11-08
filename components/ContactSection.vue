@@ -25,7 +25,6 @@ const props = withDefaults(
           <h3>Adres</h3>
           <p>Sanayi Mah. Dost Sk. No:41</p>
           <p>Değirmendere, Ortahisar / Trabzon</p>
-          <a href="https://www.sekermermer.com" class="contact-link">www.sekermermer.com</a>
         </div>
         <div class="contact-card">
           <h3>İletişim</h3>
@@ -33,17 +32,13 @@ const props = withDefaults(
             Telefon:
             <a href="tel:+904623253601">+90 462 325 36 01</a>
           </p>
-          <p>
-            E-posta:
-            <a href="mailto:info@sekermermer.com">info@sekermermer.com</a>
-          </p>
         </div>
         <div v-if="!props.compact" class="contact-card contact-highlight">
           <h3>Hızlı teklif</h3>
           <p>
             Projenizi kısaca anlatın, uygun malzeme ve fiyatlandırmayı birlikte planlayalım.
           </p>
-          <a href="mailto:info@sekermermer.com" class="btn btn-primary">
+          <a href="https://wa.me/905334135421" target="_blank" rel="noreferrer" class="btn btn-primary">
             Teklif iste
           </a>
         </div>

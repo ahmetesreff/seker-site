@@ -66,7 +66,7 @@ const props = withDefaults(
         <p>
           Projenizi kısaca anlatın, uygun malzeme ve fiyatlandırmayı birlikte planlayalım.
         </p>
-        <a href="mailto:info@sekermermer.com" class="btn btn-primary">
+        <a href="https://wa.me/905334135421" target="_blank" rel="noreferrer" class="btn btn-primary">
           Teklif iste
         </a>
       </div>
