@@ -4,11 +4,12 @@
 
 ## Yayın
 
-- **Cloudflare Pages**, GitHub bağlantılı. `main` dalına her push otomatik yayınlanır.
-- Pages ayarları: framework yok, build komutu boş, çıktı klasörü `site`.
-- `site/_headers` güvenlik başlıklarını ekler ve `*.pages.dev` kopyasını `noindex` yapar.
+- **Cloudflare Workers** (yalnız statik dosya, kod yok), GitHub bağlantılı Workers Builds. `main` dalına her push otomatik yayınlanır.
+- Ayarlar `wrangler.jsonc`'de: Worker adı `seker-site`, yayınlanan klasör `site/`, bilinmeyen adreslerde `404.html` (404 koduyla).
+- Panelde build komutu boş, deploy komutu `npx wrangler deploy`.
+- `site/_headers` güvenlik başlıklarını ve önbellek sürelerini ekler.
 - `site/_redirects` eski Nuxt adreslerini (`/iletisim`, `/urunler`…) sayfadaki bölümlere 301 ile yönlendirir.
-- `site/404.html` bilinmeyen adreslerde gerçek 404 döndürür.
+- Yerelde deneme: `npx wrangler dev` (yönlendirmeler, başlıklar ve 404 canlıdakiyle aynı çalışır).
 
 ## Yapı
 
@@ -27,7 +28,7 @@ Taş ya da marka eklemek için `index.html`'de ilgili listeye bir `<li>` eklemek
 
 ## Kontrol
 
-Yayın öncesi Lighthouse (yerelde `npx wrangler pages dev site`): telefon 98/100/100/100, masaüstü 100/100/100/100 (2026-11-08).
+Yayın öncesi Lighthouse (yerelde `npx wrangler dev`): telefon 98/100/100/100, masaüstü 100/100/100/100 (2026-11-08).
 
 ## İçerik kuralları
 

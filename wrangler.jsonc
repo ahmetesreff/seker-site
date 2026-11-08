@@ -1,0 +1,14 @@
+{
+  // Yalnızca statik dosya sunan Worker (kod yok). site/ olduğu gibi yayınlanır.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "seker-site",
+  "compatibility_date": "2026-11-01",
+  // workers.dev yalnız ilk kontrol için açık; alan adı bağlanınca false yapılacak (sitenin ikinci kopyası olmasın).
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./site",
+    // bilinmeyen adreslerde site/404.html, 404 durum koduyla
+    "not_found_handling": "404-page"
+  }
+}
