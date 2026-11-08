@@ -1,6 +1,6 @@
 # SEO ve Domain Geçiş Planı — sekermermer.com
 
-> **GEÇERSİZ (2026-11-08):** `sekermermer.com` firmaya ait değil. Alan adını eskiden başka bir firma kullanıyordu, şimdi park edilmiş durumda ve e-posta kaydı yok. Bu yüzden sitede ne `.com` adresine ne de `info@sekermermer.com` adresine yer verilmiyor.
+> **GEÇERSİZ (2026-11-08):** `sekermermer.com` firmaya ait değil. Alan adını eskiden başka bir firma kullanıyordu, şimdi park edilmiş durumda ve e-posta kaydı yok. Bu yüzden sitede `.com` web adresine yer verilmiyor. `info@sekermermer.com` adresi ise firma istediği için iletişimde kalıyor (2026-11-08); MX kaydı olmadığından şu an e-posta almıyor.
 > **Birincil ve tek alan adı `sekermermer.com.tr`.** Aşağıdaki `.com` geçiş adımları uygulanmayacak. SEO maddeleri yalnızca `.com.tr` için geçerli.
 
 

@@ -32,6 +32,10 @@ const props = withDefaults(
             Telefon:
             <a href="tel:+904623253601">+90 462 325 36 01</a>
           </p>
+          <p>
+            E-posta:
+            <a href="mailto:info@sekermermer.com">info@sekermermer.com</a>
+          </p>
         </div>
         <div v-if="!props.compact" class="contact-card contact-highlight">
           <h3>Hızlı teklif</h3>
