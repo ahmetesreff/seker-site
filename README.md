@@ -18,7 +18,7 @@ site/
   index.html        tüm içerik (taşlar, uygulamalar, hizmetler, markalar, hakkımızda, iletişim)
   site.css          renk ve yazı tipi değişkenleri en üstte
   img/tas/          taş görselleri, 400×400 webp
-  img/uygulama/     uygulama fotoğrafları, 1200×900 ve 800×600 (srcset) webp
+  img/uygulama/     uygulama fotoğrafları, 1200×900 ve 800×600 (srcset, `-800`) webp; adlar açıklayıcı, Türkçe harfsiz, tireli (eski adlar _redirects ile 301)
   img/marka/        marka logoları
   img/og-2.jpg      paylaşım önizlemesi (1200×630)
   fonts/            Barlow ve Barlow Condensed (OFL), yerelde sunulur: Google'a istek gitmez

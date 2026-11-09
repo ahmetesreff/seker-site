@@ -12,3 +12,14 @@
 /iletisim            /#iletisim     301
 /iletisim/*          /#iletisim     301
 /200.html            /              301
+
+# Eski görsel adları (2026-11-09'da açıklayıcı adlara geçildi; Google Görseller ve paylaşım önbellekleri için)
+/img/uygulama/1.webp       /img/uygulama/beyaz-tezgah-mutfak-adasi.webp              301
+/img/uygulama/1-800.webp   /img/uygulama/beyaz-tezgah-mutfak-adasi-800.webp          301
+/img/uygulama/2.webp       /img/uygulama/beyaz-damarli-tezgah-alin-kaplama.webp      301
+/img/uygulama/2-800.webp   /img/uygulama/beyaz-damarli-tezgah-alin-kaplama-800.webp  301
+/img/uygulama/3.webp       /img/uygulama/siyah-tezgahli-mutfak-adasi.webp            301
+/img/uygulama/3-800.webp   /img/uygulama/siyah-tezgahli-mutfak-adasi-800.webp        301
+/img/uygulama/3b.webp      /img/uygulama/siyah-tezgahli-mutfak-adasi.webp            301
+/img/uygulama/3b-800.webp  /img/uygulama/siyah-tezgahli-mutfak-adasi-800.webp        301
+/img/og.jpg                /img/og-2.jpg                                             301
