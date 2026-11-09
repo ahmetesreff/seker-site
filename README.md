@@ -20,7 +20,7 @@ site/
   img/tas/          taş görselleri, 400×400 webp
   img/uygulama/     uygulama fotoğrafları, 1200×900 ve 800×600 (srcset) webp
   img/marka/        marka logoları
-  img/og.jpg        paylaşım önizlemesi (1200×630)
+  img/og-2.jpg      paylaşım önizlemesi (1200×630)
   fonts/            Barlow ve Barlow Condensed (OFL), yerelde sunulur: Google'a istek gitmez
 ```
 
